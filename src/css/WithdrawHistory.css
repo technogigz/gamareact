@@ -1,0 +1,62 @@
+/* src/css/WithdrawHistory.css */
+.history-page {
+  background: #f2f2f2;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  background: #e4e4e4;
+}
+
+.history-list {
+  padding: 12px 12px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.history-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.history-top-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
+}
+
+.history-status {
+  color: #22c55e;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.history-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #333;
+}
+
+.history-amount {
+  font-weight: bold;
+  color: #1e1e1e;
+}

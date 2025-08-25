@@ -1,0 +1,48 @@
+/* src/components/GameTabs.css */
+
+.game-tabs-wrapper {
+  display: flex;
+  gap: 10px;
+  padding: 12px 7px;
+  justify-content: space-between;
+  background: #f2f2f2; /* ← match header bg */
+  overflow-x: auto;
+}
+
+.game-tabs-wrapper::-webkit-scrollbar {
+  display: none; /* optional: hide scrollbar */
+}
+.game-status.open {
+  color: #28a745; /* Green color */
+}
+
+/* Style for when the game is closed */
+.game-status.closed {
+  color: #dc3545; /* Red color */
+}
+
+.game-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: #fc481b; /* Changed from #ffb81c to a reddish color (Crimson) */
+  border: none;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #fff; /* Changed from #000 to white */
+  font-family: "Poppins", sans-serif !important;
+  width: 50%;
+}
+
+.iccon-play {
+  width: 18px;
+  height: 18px;
+  background: url('../assets/icons/playicon.svg') center/contain no-repeat;
+  flex-shrink: 0;
+  /* Optional: Invert icon color if it's a single-color SVG to make it visible on dark bg */
+  filter: brightness(0) invert(1);
+}

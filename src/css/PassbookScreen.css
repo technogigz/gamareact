@@ -1,0 +1,120 @@
+.passbook-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f2f2f2;
+}
+
+/* Header */
+.passbook-header {
+  background: #e4e4e4;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.passbook-header h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.back-btn {
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+}
+
+/* Table wrapper */
+.table-scroll {
+  flex: 1;
+  overflow-x: auto;
+  background: white;
+  white-space: nowrap;
+}
+
+/* Table */
+.passbook-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.passbook-table th,
+.passbook-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.passbook-table th {
+  background: #fd511c;
+  color: black;
+  font-weight: 600;
+}
+
+.passbook-table td {
+  background: #fff;
+  color: #333;
+}
+
+/* Pager */
+.pager {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  gap: 10px;
+}
+
+.pager-btn {
+  flex: 1;
+  background: #fd511c;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  color: black;
+}
+
+.pager-count {
+  flex-shrink: 0;
+  width: 70px;
+  text-align: center;
+  line-height: 38px;
+  font-weight: 600;
+}
+
+/* dddd */
+
+.passbook-table td.narrow-col {
+  width: 90px; /* Transaction Date or Amount */
+  white-space: nowrap;
+}
+
+.passbook-table td.wide-col {
+  width: auto;
+}
+
+.particulars-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.down-arrow {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(73%) sepia(63%) saturate(529%) hue-rotate(360deg) brightness(99%) contrast(94%);
+}

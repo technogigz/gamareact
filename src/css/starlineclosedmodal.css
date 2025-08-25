@@ -1,0 +1,87 @@
+.sl-modal-overlay {
+  position: absolute; /* Use fixed to cover the whole viewport */
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.sl-modal-content {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  width: 90%;
+  max-width: 340px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.sl-modal-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  background-color: #ffebee; /* Light red background */
+}
+
+.sl-modal-icon {
+  color: #c62828; /* Deep red color */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.sl-modal-title {
+  font-weight: 600;
+  color: #c62828;
+  margin: 0 0 0.5rem 0;
+}
+
+.sl-modal-gamename {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 1rem 0;
+}
+
+.sl-modal-timing {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #f7f7f7;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.sl-modal-timing > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sl-modal-timing span:first-child {
+  color: #666;
+}
+
+.sl-modal-timing span:last-child {
+  font-weight: 600;
+  color: #333;
+}
+
+.sl-modal-ok-btn {
+  width: 100%;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #333;
+  background-color: #ffb81c; /* Yellow/Orange */
+  cursor: pointer;
+}

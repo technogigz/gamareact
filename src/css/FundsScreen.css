@@ -1,0 +1,76 @@
+.funds-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+}
+
+.funds-card:focus {
+  outline: none;
+}
+
+.funds-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+ filter: brightness(0) saturate(100%) 
+          invert(32%) sepia(95%) saturate(1200%) 
+          hue-rotate(5deg) brightness(95%) contrast(110%);
+        }
+
+.funds-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.funds-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #000;
+}
+
+.funds-desc {
+  font-size: 13px;
+  color: #666;
+}
+
+.arrow-btn {
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  background: #f2f2f2;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) saturate(100%) 
+          invert(32%) sepia(95%) saturate(1200%) 
+          hue-rotate(5deg) brightness(95%) contrast(110%);
+}
+
+
+
+.funds-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 16px 90px; /* Top, horizontal sides, bottom */
+}

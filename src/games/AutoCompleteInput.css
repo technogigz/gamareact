@@ -1,0 +1,42 @@
+.autocomplete-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.autocomplete-wrapper input
+ {
+    position: relative;
+  width: 100%;
+  border: 1px solid #ced4da;
+  border-radius: 20px;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  box-sizing: border-box; /* Important for consistent sizing */
+}
+
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  list-style-type: none;
+  margin: 4px 0 0 0;
+  padding: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.suggestions-list li {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.suggestions-list li:hover {
+  background-color: #f0f0f0;
+}

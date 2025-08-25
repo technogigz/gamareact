@@ -1,0 +1,29 @@
+/* src/components/ContactBar.css */
+
+.contact-bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;  
+  justify-content: space-between;              /* tighter spacing between contacts */
+  padding: 6px 16px;        /* reduced vertical padding */
+  background: #f2f2f2;      /* match header/ticker bg */
+  font-size: 13px;          /* slightly smaller text */
+           /* just a small gap from GameTabs */
+}
+
+.wa-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;   
+  font-size: 19px;      /* slightly lighter than bold */
+}
+
+.icon-wa {
+  width: 16px;              /* smaller icon */
+  height: 16px;
+  flex-shrink: 0;
+  background: url('../assets/icons/logos_whatsapp-icon.svg') center/contain no-repeat;
+}

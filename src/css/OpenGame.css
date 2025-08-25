@@ -1,0 +1,183 @@
+/* .open-game-container {
+  background-color: #f2f2f2;
+  min-height: 100vh;
+  padding: 16px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  overflow-y: auto;
+  scrollbar-width: none; 
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+  background-color: #f2f2f2;
+  border-bottom: none;
+}
+
+.top-bar img {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.top-bar h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+  text-transform: capitalize;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.game-carrd {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.game-carrd:hover {
+  transform: scale(1.02);
+}
+
+.icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+
+.icon-wrapper img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.game-carrd p {
+  font-size: 13px;
+  font-weight: 500;
+  color: #2c3540;
+  margin: 0;
+  text-transform: capitalize;
+} */
+
+
+
+
+.open-game-container {
+  background-color: #f2f2f2;
+  min-height: 100vh;
+  padding: 16px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  overflow-y: auto;
+  scrollbar-width: none; 
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+  background-color: #f2f2f2;
+  border-bottom: none;
+}
+
+.top-bar img {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.top-bar h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+  text-transform: capitalize;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* .game-carrd {
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  color: #fff; 
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+} */
+ .game-carrd {
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+/* .game-carrd:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+} */
+
+.game-carrd:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 14px rgba(0,0,0,0.2);
+}
+
+.game-carrd p {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+/* Different background themes */
+
+
+/* Icon circle – make it translucent */
+.icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25); /* transparent white */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.icon-wrapper img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+
+  /* Make them visible on gradients */
+  filter: brightness(0) saturate(100%) invert(15%) sepia(90%) saturate(600%) hue-rotate(5deg) brightness(95%) contrast(90%);
+}
+
+

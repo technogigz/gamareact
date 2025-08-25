@@ -1,0 +1,168 @@
+/* ─────────────────────────────
+   Sidebar Container
+   ─────────────────────────── */
+.sidebar-container {
+  position: absolute;
+  inset: 0;
+  z-index: 100; /* just above main content */
+}
+
+/* ─────────────────────────────
+   Overlay
+   ─────────────────────────── */
+.sidebar-overlay {
+  position: absolute;        
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 1;                
+}
+
+.sidebar-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ─────────────────────────────
+   Sidebar Panel
+   ─────────────────────────── */
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  padding: 16px 12px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* ─────────────────────────────
+   Header
+   ─────────────────────────── */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+}
+
+.user-info > div {
+  display: flex;
+  flex-direction: column; /* This stacks the name and phone */
+}
+
+.user-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column; /* This stacks the items vertically */
+  justify-content: center; /* This vertically centers them if there's extra space */
+}
+.username {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.phone {
+  font-size: 13px;
+  color: #666;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* ─────────────────────────────
+   Menu Items
+   ─────────────────────────── */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.sidebar-menu li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sidebar-menu li:hover {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding-left: 6px;
+}
+
+/* ─────────────────────────────
+   Icon Styles
+   ─────────────────────────── */
+.sidebar-icon {
+  width: 22px;
+  height: 22px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* ─── icon mappings ─── */
+.icon-home      { background-image: url("../assets/icons/home_nav1.svg"); }
+.icon-hammer    { background-image: url("../assets/icons/bid_nav.svg"); }
+.icon-lock      { background-image: url("../assets/icons/mpin_nav1.svg"); }
+.icon-doc       { background-image: url("../assets/icons/passbook1.svg"); }
+.icon-chat      { background-image: url("../assets/icons/bubble-chat.png"); }
+.icon-bank      { background-image: url("../assets/icons/funds.svg"); }
+.icon-bell      { background-image: url("../assets/icons/notification.png"); }
+.icon-video     { background-image: url("../assets/icons/videos1.svg"); }
+.icon-rules     { background-image: url("../assets/icons/warning.png"); }
+.icon-rates     { background-image: url("../assets/icons/three-stars.png"); }
+.icon-chart     { background-image: url("../assets/icons/charts1.svg"); }
+.icon-idea      { background-image: url("../assets/icons/lightbulb.png"); }
+.icon-settings  { background-image: url("../assets/icons/setting_nav1.svg"); }
+.icon-share     { background-image: url("../assets/icons/share1.svg"); }
+.icon-logout    { background-image: url("../assets/icons/logout_icon1.svg"); }

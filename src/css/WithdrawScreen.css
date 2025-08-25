@@ -1,0 +1,192 @@
+.withdraw-screen-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #f2f2f2; /* Light grey background */
+}
+
+.withdraw-content {
+  flex: 1; /* Takes up all available space between header and nav */
+  padding: 20px 15px;
+  overflow-y: none;
+}
+
+/* Balance & Info Cards */
+.balance-card, .info-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-size: 20px;
+}
+
+.balance-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.balance-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.wallet-icon-container {
+  background-color: #fbbd05; /* Yellow circle */
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet-icon {
+  color: white;
+  font-size: 20px;
+}
+
+.balance-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.balance-amount {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.balance-label {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.card-logo {
+  position: relative;
+  width: 45px;
+  height: 30px;
+}
+
+.card-logo .circle-1, .card-logo .circle-2 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.card-logo .circle-1 {
+  background-color: #eb001b;
+  left: 0;
+}
+
+.card-logo .circle-2 {
+  background-color: #f79e1b;
+  right: 0;
+  opacity: 0.85;
+}
+
+/* Info Card Specifics */
+.info-card h4 {
+  text-align: center;
+  font-weight: 500;
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.info-contact {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+}
+
+.whatsapp-icon {
+  color: #25d366;
+  font-size: 36px;
+}
+
+.contact-details {
+  line-height: 1.4;
+}
+
+.phone-number {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.timing {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0;
+}
+
+/* Withdraw Form */
+.withdraw-form {
+  text-align: center;
+}
+
+.withdraw-title {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-iconn {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 20px;
+  z-index: 2;
+}
+
+.amount-input {
+  width: 100%;
+  padding: 16px 16px 16px 55px; /* Left padding to make space for icon */
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  box-sizing: border-box; /* Important for correct width */
+}
+
+.amount-input:focus {
+  outline: none;
+  border-color: #fbbd05;
+}
+
+.send-request-btn {
+  width: 91%;
+  padding: 16px;
+  background-color: #f7a40b; /* Main yellow color */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 1px;
+  margin-top:128px;
+  height:58px
+}
+
+/* Add this at the end of your CSS file */
+.min-withdraw-text {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: -10px; /* Pulls it closer to the input field */
+  margin-bottom: 20px;
+  text-align: center;
+}

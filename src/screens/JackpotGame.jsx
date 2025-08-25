@@ -1,0 +1,120 @@
+import React, { useEffect, useState, useContext } from 'react';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import axios from 'axios';
+import { AppContext } from '../context/AppContext';
+import '../css/mainhome.css';
+import '../css/StarlineGames.css'; // We will create this CSS file next
+
+const getRandomGradient = () => {
+  const reddishGradients = [
+    "linear-gradient(135deg, #ff9a9e, #fad0c4)",
+    "linear-gradient(135deg, #ffdde1, #ee9ca7)",
+    "linear-gradient(135deg, #fda085, #f6d365)",
+    "linear-gradient(135deg, #ff6a88, #ff99ac)",
+    "linear-gradient(135deg, #fbc2eb, #a18cd1)",
+    "linear-gradient(135deg, #f9d423, #ff4e50)",
+    "linear-gradient(135deg, #ffecd2, #fcb69f)",
+    "linear-gradient(135deg, #f8cdda, #1d2b64)",
+  ];
+  return reddishGradients[Math.floor(Math.random() * reddishGradients.length)];
+};
+
+
+const JackpotGames = () => {
+  const navigate = useNavigate();
+  const { marketId } = useParams(); // Gets the specific starline game ID (e.g., "123")
+  const location = useLocation();   // Gets the name passed from the previous screen
+  const { user } = useContext(AppContext);
+
+  const [games, setGames] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Get the market name (e.g., "10:30 AM") from the previous screen's state
+  const marketName = location.state?.gameName || 'Jackpot Game';
+
+  useEffect(() => {
+    const fetchJackpotGameTypes = async () => {
+      const mobileNo = user?.mobileNo || localStorage.getItem('mobileNo');
+      if (!mobileNo) {
+        setError("Mobile number not found.");
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const token = localStorage.getItem('accessToken');
+        // CAUTION: Please replace with your actual API endpoint for starline game types
+        const response = await axios.get(
+          'https://sarra777.net/api/v1/jackpot-game-bid-type', 
+          { mobileNo },
+          {
+            headers: {
+              "deviceId": "qwert",
+            "deviceName": "sm2233",
+            "accessStatus": "1",
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+              // Add other necessary headers
+            },
+          }
+        );
+
+        if (response.data?.status && Array.isArray(response.data.info)) {
+           const gamesWithColors = response.data.info.map(game => ({
+            ...game,
+            gradient: getRandomGradient()
+          }));
+          setGames(gamesWithColors);
+        } else {
+          throw new Error(response.data.msg || "Failed to fetch game types.");
+        }
+      } catch (err) {
+        setError(err.message);
+        console.error("Error fetching starline game types:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchJackpotGameTypes();
+  }, [user]); // Re-fetch if user changes
+
+  const handleGameClick = (game) => {
+    // Navigate to our main BidGames screen, passing both the marketId and the gameType
+    // The 'game.type' (e.g., "singleDigits") must match a key in your gameConfigs.js file
+    navigate(`/bid/jackpot/${marketId}/${game.type}`, {
+      state: { marketName: marketName } // Pass the market name for the header
+    });
+  };
+
+  return (
+    <div className="mainhome-screen-wrapper">
+      <div className="st-games-container">
+        <div className="st-games-header">
+          <button className="st-back-btn" onClick={() => navigate(-1)}>‹</button>
+          <h2>{marketName}</h2>
+          <div className="st-wallet">
+            <span className="st-wallet-icon"></span>
+            <span>{user?.walletBalance || '0'}</span>
+          </div>
+        </div>
+
+        <div className="st-games-grid screen-content">
+          {loading && <p className="st-message">Loading Games...</p>}
+          {error && <p className="st-message error">{error}</p>}
+          {!loading && !error && games.map((game) => (
+            <div key={game.id} className="st-game-card" style={{ background: game.gradient }} onClick={() => handleGameClick(game)}>
+              <div className="st-game-icon-wrapper">
+                <img src={game.image} alt={game.name} />
+              </div>
+              <p>{game.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default JackpotGames;

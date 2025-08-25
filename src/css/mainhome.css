@@ -1,0 +1,22 @@
+.mainhome-screen-wrapper {
+  width: 100%;
+  height: 100dvh;
+  margin:0;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0;
+}
+
+/* Desktop-like simulated phone frame for larger screens */
+@media (min-width: 768px) {
+  .mainhome-screen-wrapper {
+    width: 360px;
+    height: 785px;
+     margin: 0.5rem auto;
+    border-radius: 32px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  }
+}

@@ -1,0 +1,23 @@
+.ticker-wrapper {
+  overflow: hidden;
+  background: #f2f2f2; /* Match header background */
+  padding: 2px 0;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.ticker-text {
+  white-space: nowrap;
+  animation: scroll 10s linear infinite;
+  color: #d22;
+  margin: 0;
+  font-size: 20px;
+}
+
+
+@keyframes scroll {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}

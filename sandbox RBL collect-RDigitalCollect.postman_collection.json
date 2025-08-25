@@ -1,0 +1,462 @@
+{
+	"info": {
+		"_postman_id": "e6a00e20-4284-4116-a8f5-b35fe5ceed69",
+		"name": "sandbox RBL collect-RDigitalCollect",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37051895",
+		"_collection_link": "https://eazypayouts.postman.co/workspace/81dd165a-682f-4ed3-87c3-0ddeb3f5e14f/collection/37051895-e6a00e20-4284-4116-a8f5-b35fe5ceed69?action=share&source=collection_link&creator=37051895"
+	},
+	"item": [
+		{
+			"name": "Import Signature Library",
+			"item": [
+				{
+					"name": "01 Run Once",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code should be 200\", function () {",
+									"    pm.response.to.have.status(200)",
+									"    pm.globals.set(\"pmlib_code\", responseBody)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://joolfe.github.io/postman-util-lib/dist/bundle.js",
+							"protocol": "https",
+							"host": [
+								"joolfe",
+								"github",
+								"io"
+							],
+							"path": [
+								"postman-util-lib",
+								"dist",
+								"bundle.js"
+							]
+						},
+						"description": "Escrow stack requires you to include a timestamp to the payload.\n\nThe actual timestamp generation is done in the collection's pre-run script.\n\nWhen you invoke a api in this postman collection, the pre-run script generates a timestamp and populates the collection variables with the values.\n\nThe timestamp is attached to the payload via collection variables {{timestamp}}\n\nLoad the postman-util-lib from github.io and load into postman global variable."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account API",
+			"item": [
+				{
+					"name": "Get TransactionAccount Balance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" pm.test(\"Test Success\",function(){",
+									"",
+									"    var escrow_id = pm.request.toJSON().escrow_id",
+									"    var uri = pm.collectionVariables.get(\"sim\")",
+									"    var responseJson = pm.response.json();",
+									"    if(escrow_id == \"doesnotexist\"){",
+									"        pm.expect(responseJson.data.code).to.eql(\"ERR_CFTA\")",
+									"        pm.expect(responseJson.data.cause).to.eql(\"doesnotexist\")",
+									"        pm.expect(responseJson.data.hasOwnProperty(\"balance\")).to.eql(true)",
+									"         pm.response.to.have.status(400)",
+									"    }",
+									"   ",
+									"    if(escrow_id == \"comsol\"){",
+									"        pm.expect(responseJson.data.hasOwnProperty(\"balance\")).to.eql(true)",
+									"    }",
+									"})",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{live}}/v1/escrow/fetch_transaction_account_balance",
+							"host": [
+								"{{live}}"
+							],
+							"path": [
+								"v1",
+								"escrow",
+								"fetch_transaction_account_balance"
+							]
+						},
+						"description": "## Description:\n\nThis api allows you to fetch the balance in the Transaction Account.\n\nYou application is free from the burden of handling race conditions, ad hoc banking behaviour and failure handling.\n\n## Headers:\n\napikey: A signed JWT provided to you by VouchPay\n\n## Request Body:\n\n{}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Collects",
+			"item": [
+				{
+					"name": "Get Intent Link",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "{{apikey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"collects\": [\r\n        {\r\n            \"collect_ref\": \"{{ref_time_prefix}}upi1306\",\r\n            \"amount\": 1,\r\n            \"collect_mode\": \"UPI_INTENT_LINK\",\r\n            \"transaction_note\": \"test\",\r\n            \"payer\": {\r\n                \"user_ref\": \"PavanDev\"\r\n            },\r\n            \"collect_instruction\":{\r\n                \"display_name\":\"My Ground 11\",\r\n                \"transaction_note\":\"for test\"\r\n            }\r\n        }\r\n    ],\r\n    \"timestamp\": \"{{IST_Timestamp}}\",\r\n    \"signature\": \"{{signature}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{live}}/v1/escrow/collect",
+							"host": [
+								"{{live}}"
+							],
+							"path": [
+								"v1",
+								"escrow",
+								"collect"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "simulate intent collect",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "{{apikey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"link\":\"upi://pay?pa=simpayin.myground11@rbl&pn=ZC8WVNOKJ0&tr=ZC8WVNOKJ0&am=1.00&cu=INR&mc=5816&tn=ZC8WVNOKJ0\",\r\n    \"amount\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{live}}/v1/simbank/simulate_qr_code_intent_link_payment",
+							"host": [
+								"{{live}}"
+							],
+							"path": [
+								"v1",
+								"simbank",
+								"simulate_qr_code_intent_link_payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "{{apikey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"collect_ref_arr\": [\r\n        \"20250707182627upi1306\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{live}}/v1/escrow/get_intent_link_status",
+							"host": [
+								"{{live}}"
+							],
+							"path": [
+								"v1",
+								"escrow",
+								"get_intent_link_status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Intent Link Details",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "{{apikey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"crn_arr\":[\r\n\"ZC8WVNOKJ0\"\r\n\r\n\r\n]\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{live}}/v1/escrow/get_intent_link_details",
+							"host": [
+								"{{live}}"
+							],
+							"path": [
+								"v1",
+								"escrow",
+								"get_intent_link_details"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Webhook",
+			"item": [
+				{
+					"name": "Fetch Registered Endpoint",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "{{apikey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{live}}/v1/escrow/fetch_registered_webhook_endpoints",
+							"host": [
+								"{{live}}"
+							],
+							"path": [
+								"v1",
+								"escrow",
+								"fetch_registered_webhook_endpoints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Webhook Endpoint",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "{{apikey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"webhook_endpoint_url\":\"https://1b5f-49-205-194-26.ngrok-free.app/webhook\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{live}}/v1/escrow/update_webhook_endpoint_url",
+							"host": [
+								"{{live}}"
+							],
+							"path": [
+								"v1",
+								"escrow",
+								"update_webhook_endpoint_url"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"",
+					"if(pm.request.url=='https://joolfe.github.io/postman-util-lib/dist/bundle.js'){",
+					"    return;",
+					"} else {",
+					"    eval(pm.globals.get('pmlib_code'))",
+					"    console.log(\"pmlib imported\")",
+					"    if(pm.request.body.formdata != null){",
+					"        return;",
+					"    }",
+					"",
+					"    var body = JSON.parse(pm.request.body.raw)",
+					"    delete body.signature",
+					"     var date = new Date();",
+					"    var timestamp = date.toLocaleString(\"en-IN\", { timeZone: \"Asia/Kolkata\" });",
+					"   ",
+					"    var ts = date.getFullYear()",
+					"        +(''+(date.getMonth()+1)).padStart(2,'0')",
+					"        +(''+date.getDate()).padStart(2,'0')",
+					"        +(''+date.getHours()).padStart(2,'0')",
+					"        +(''+date.getMinutes()).padStart(2,'0')",
+					"        +(''+date.getSeconds()).padStart(2,'0');",
+					"    ",
+					"    if(body.payouts && body.payouts[0].payout_ref.indexOf(\"{{ref_time_prefix}}\")==0){",
+					"        body.payouts[0].payout_ref = ts+body.payouts[0].payout_ref.substring(19);",
+					"    }",
+					"    body.timestamp = timestamp;",
+					"    var payload = JSON.stringify(body)",
+					"    console.log(\"#\"+payload+\"#\")",
+					"    var privKey = pm.collectionVariables.get(\"privateKey\")",
+					"",
+					"    var privKeyObj = pmlib.rs.KEYUTIL.getKey(privKey)",
+					"    var signatrureHex = privKeyObj.sign(payload, \"sha256\")",
+					"    var signatureBase64 = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Hex.parse(signatrureHex))",
+					"    pm.collectionVariables.set(\"IST_Timestamp\",timestamp);",
+					"    pm.collectionVariables.set(\"ref_time_prefix\",ts)",
+					"    pm.collectionVariables.set(\"signature\", signatureBase64)",
+					"}",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "live",
+			"value": "https://cas.myground11.co.in",
+			"type": "string"
+		},
+		{
+			"key": "privateKey",
+			"value": "\"-----BEGIN PRIVATE KEY-----\n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\nDxv1Eg0HS/CbYNd+HxroErdtac7Dqjdk2pKnLoHTAoIBAQCW9bf/OHW7MHjlIPVF\nP9acRCfIf+4iDzMB7mcb2i7hoJIk2iGDf+gI84deKLajUv8TCYqe2B8qMQNxb9Q2\n1oT+O+vV+SDrvuV7azhCys7Wv3eE1aWLaWUiCV/AsbNdY9iZsPCDxHCqPYy9zZiu\nlP0THwj5TDCfYJrsdfa28KZfe8tpYYCULlOwl1GYJHrPbiajA/oZnX0/+1Lk9OJW\ngSX/GIFTidZRDQ51Ty4YnLDIwyNT1we8YbHjICgmUYx/VVOT8P6W0GS0dmxh8XyV\nCKFrbaXxmRjLIu9e2tbqmzOTiV6Pk/mQKYwbVF9mkBHen5DYB1GtTffnlx2pUNYA\nBl65AoIBAQCBKSw6TTwZyHTEwVNwfG2MubOHnhs2jISHJPXp6IZvHWVy1nRRcvgu\nbFt47InqN5jpfnBQS+YAjIyf2gIWHKR7a3Nku8mIKYuMo8HpZjrTdxQBCR5hxm0x\nvn5kFRCQyi5sjYS+XF+7xbpKv2i+jVvbwlAMePz6L+z+LfIbx2G3CDCIPyyZZcxN\nhB/oh74iZKpsvgrEA5Yf15PKyiuIl3WHFz2Iu4MnX246Zem2l+KD/fgIxE9nIJ5Y\nnyagMmVBHDDR6UJT1QfrBWLqEH6g5tyAO+RuWMdmzF5iWABG7CtwaJQhr6WMs+YF\nLkW31LLs+dk3XLguoglqf3eYFZMsyF9g\n-----END PRIVATE KEY-----\"",
+			"type": "string"
+		},
+		{
+			"key": "signature",
+			"value": ""
+		},
+		{
+			"key": "IST_Timestamp",
+			"value": ""
+		},
+		{
+			"key": "apikey",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIwZGQ1YTFmYi01MzE2LTQzYjYtOGVhNy00Zjc1MjhkMjgyYTkiLCJuYW1lIjoiUkRpZ2l0YWxDb2xsZWN0IiwicmVnIjoicElIYjZ2R0l5b1Z2WVZRWEZZRTkiLCJjb25maWciOiJSRGlnaXRhbENvbGxlY3QiLCJlbnYiOiJzYW5kYm94IiwiaWF0IjoxNzUxODkyMDQ3fQ.zCabSSzKupN7eu6IU-G5iJRcIvF-DqY1DY5S5KNd2DA",
+			"type": "string"
+		},
+		{
+			"key": "payout_ref_counter",
+			"value": ""
+		},
+		{
+			"key": "payout_ref_prefix",
+			"value": "",
+			"disabled": true
+		},
+		{
+			"key": "payout_ref",
+			"value": "",
+			"disabled": true
+		},
+		{
+			"key": "timestamp",
+			"value": ""
+		},
+		{
+			"key": "ref_time_prefix",
+			"value": ""
+		},
+		{
+			"key": "payout_ref_prefix",
+			"value": ""
+		},
+		{
+			"key": "payout_ref",
+			"value": ""
+		}
+	]
+}

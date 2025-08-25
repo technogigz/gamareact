@@ -1,0 +1,146 @@
+
+
+
+
+
+
+
+.funds-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+  padding-bottom:95px
+}
+
+/* This new rule is the key fix */
+.funds-content-top {
+  flex-grow: 1; /* Allows this section to take up available space */
+}
+
+/* Balance Card Styles */
+.funds-balance-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem; /* Add space below the card */
+}
+.funds-card-top {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.funds-card-brand { font-weight: 600; font-size: 1.1rem; }
+.funds-card-logo { width: 40px; height: 25px; background-color: #fff; border-radius: 4px; position: relative; }
+.funds-card-logo::before, .funds-card-logo::after { content: ''; position: absolute; border-radius: 50%; top: 50%; transform: translateY(-50%); }
+.funds-card-logo::before { width: 15px; height: 15px; background-color: #eb001b; left: 5px; }
+.funds-card-logo::after { width: 15px; height: 15px; background-color: #f79e1b; left: 17px; opacity: 0.85; }
+.funds-card-bottom { background-color: white; padding: 1rem; display: flex; align-items: center; gap: 1rem; }
+.funds-wallet-icon { width: 32px; height: 32px; background-image: url('../assets/icons/wallet_figma1.svg'); background-size: contain; background-repeat: no-repeat; opacity: 0.7; }
+.funds-balance-amount { display: block; font-size: 1.2rem; font-weight: 700; }
+.funds-balance-label { display: block; font-size: 0.8rem; color: #888; }
+
+/* Add Fund Input Styles */
+.funds-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 25px;
+  padding: 0.75rem 1rem; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.funds-bank-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url('../assets/icons/bank.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 0.75rem;
+}
+.funds-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  background-color: transparent;
+}
+
+/* Action Buttons Styles */
+.funds-action-buttons {
+  /* This no longer needs margin-top: auto */
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.funds-action-btn {
+  background-color: #ff491c;
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+
+
+.payment-status-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+
+
+
+/* src/css/AddFunds.css */
+
+.funds-preset-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 0 15px;
+}
+
+.funds-preset-btn {
+  background-color: #f0f2f5;
+  border: 1px solid #d9dce1;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.funds-preset-btn:hover {
+  background-color: #e4e6eb;
+  border-color: #cdd1d8;
+}
+
+.funds-preset-btn:active {
+  background-color: #d9dce1;
+}

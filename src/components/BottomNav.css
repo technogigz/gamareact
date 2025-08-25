@@ -1,0 +1,83 @@
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 6px 0;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #555;
+  padding: 6px 0;
+}
+
+/* Home button (always yellow and centered) */
+.nav-item.main {
+  position: relative;
+  top: -3px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #f7500e;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  color: #000;
+  flex: none;
+}
+
+/* Icon inside home button */
+.icon-home {
+  width: 28px;
+  height: 28px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Icons for other nav items */
+.icon-hammer,
+.icon-doc,
+.icon-bank,
+.icon-chat {
+  width: 22px;
+  height: 22px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-hammer { background-image: url("../assets/icons/bid_nav.svg"); }
+.icon-doc    { background-image: url("../assets/icons/passbook1.svg"); }
+.icon-home   { background-image: url("../assets/icons/home_orange1.svg"); }
+.icon-bank   { background-image: url("../assets/icons/funds.svg"); }
+.icon-chat   { background-image: url("../assets/icons/customer_support.svg"); }
+
+/* Active state for nav items EXCEPT home */
+.nav-item.active:not(.main) {
+  color: #ec691c;
+  font-weight: 600;
+}
+
+.nav-item.active:not(.main) span[class^="icon-"] {
+  filter: brightness(0) saturate(100%) 
+          invert(32%) sepia(95%) saturate(1200%) 
+          hue-rotate(5deg) brightness(95%) contrast(110%);
+}

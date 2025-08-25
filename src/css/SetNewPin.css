@@ -1,0 +1,88 @@
+/* Full‑height white screen */
+.setpin-content-wrapper {
+  padding: 0 20px 24px; 
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: #fff;
+}
+
+
+/* Heading row */
+.heading-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 60px;
+  margin-top: 15px;
+}
+
+.accent-bar {
+  width: 8px;
+  height: 72px;
+  background: #f66b1b;          /* yellow */
+  border-radius: 3px;
+}
+
+.heading-row h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0;
+}
+
+/* Labels */
+.field-label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* Input box */
+.text-input {
+  width: 100%;
+  background: #eaeaea;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 16px;
+  
+  outline: none;
+ 
+  box-sizing: border-box;        /* ← prevents overflow */
+  margin-bottom: 20px; 
+}
+
+/* Yellow button */
+.setpin-btn {
+  width: 100%;
+  background: #f66b1b;
+  border: none;
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+/* Countdown */
+.resend-text {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Resend link (after timer) */
+.resend-link {
+  background: none;
+  border: none;
+  color: #f66b1b;
+  font-weight: 600;
+  margin: 24px auto 0;
+  cursor: pointer;
+}

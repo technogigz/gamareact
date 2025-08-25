@@ -1,0 +1,68 @@
+/* Main header container */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Left side container */
+.menu-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Space between menu button and logo */
+}
+
+.logo {
+  height: 30px; /* Adjust logo height as needed */
+}
+
+/* Right side container */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between wallet and bell icons */
+}
+
+/* General icon button styling */
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Wallet button specific styling */
+.wallet-btn {
+  gap: 6px; /* Space between wallet icon and balance text */
+}
+
+.wallet-balance {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* --- You must provide your own icon images --- */
+.icon-hamburger,
+.icon-wallet,
+.icon-bell {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Replace with correct paths to your icons */
+.icon-hamburger { 
+  background-image: url("../assets/icons/icons8-hamburger-menu.svg");
+}
+.icon-wallet { 
+  background-image: url("../assets/icons/wallet_figma1.svg");
+}

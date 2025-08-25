@@ -1,0 +1,107 @@
+/* Outer wrapper for mobile layout */
+.mobile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #f2f2f2;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Simulated mobile frame style on larger screens */
+@media (min-width: 768px) {
+  .mobile-wrapper {
+    width: 360px;
+    height: 780px;
+    margin: auto;
+    border-radius: 32px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* ── Header row ───────────────────────── */
+.header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.side-bar {
+  width: 8px;
+  height: 50px;
+  background: #ff371c;
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+
+.header-row h2 {
+  font: 700 22px/1.4 'Roboto', sans-serif;
+  color: #555;
+  margin: 0;
+}
+
+/* ── Illustration ─────────────────────── */
+.illu-box {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 32px;
+}
+
+.illu-box img {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ── Form (input + button) ───────────── */
+.form-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.pin-label {
+  width: 100%;
+  font-size: 14px;
+  color: #222;
+  margin-bottom: -8px;
+}
+
+.pin-input {
+  width: 100%;
+  background: #f1f1f1;
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 18px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  outline: none;
+  text-align: center;
+  letter-spacing: 6px;
+}
+
+.pin-btn,
+.pin-btn:focus {
+  width: 100%;
+  background: #ff3e1c;
+  border: none;
+  padding: 16px 0;
+  font: 600 18px 'Roboto', sans-serif;
+  color: #222;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.pin-btn:active {
+  transform: scale(0.98);
+}

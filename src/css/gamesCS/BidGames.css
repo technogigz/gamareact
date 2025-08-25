@@ -1,0 +1,129 @@
+/* General Setup and Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* A wrapper to simulate the phone's screen and bezel for presentation */
+
+.time-bazar-container {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f9fa; /* A light grey background */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Section */
+.tb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+.tb-header-icon, .tb-header-wallet {
+  flex: 1 0 0;
+}
+
+.tb-header-icon {
+  color: #333;
+}
+
+.tb-header-title {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #333;
+  text-transform: uppercase;
+  flex: 4 0 0; /* Give title more space */
+}
+
+.tb-header-wallet {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.3rem;
+}
+
+.tb-wallet-amount {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Main Content (Form) */
+.tb-main-content {
+  padding: 1.5rem 1rem;
+  flex-grow: 1; /* Allows this section to fill available space */
+}
+
+.tb-form-group {
+  margin-bottom: 1.25rem;
+}
+
+.tb-label {
+  display: block;
+  font-size: 0.875rem; /* 14px */
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.tb-input-display {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  background-color: #ffffff;
+  font-size: 1rem;
+  color: #6c757d;
+  box-sizing: border-box;
+}
+
+.tb-add-bid-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #fbc02d; /* A vibrant yellow/orange */
+  color: #212529; /* Dark text for contrast */
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Bid List Section */
+.tb-bid-list {
+  padding: 0 1rem;
+  background-color: #f8f9fa;
+}
+
+.tb-bid-list-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+
+.tb-header-col {
+  flex: 1;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.tb-header-col.amount {
+  text-align: center;
+}
+.tb-header-col.type {
+  text-align: right;
+}
+
+.tb-divider {
+  border: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 0;
+}
