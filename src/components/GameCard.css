@@ -140,7 +140,7 @@
   margin: 0;
   font-size: 16px;
   font-weight: 700;
-  color: #f33832; /* Red color from screenshot */
+  color: #f84404; /* Red color from screenshot */
   text-transform: uppercase;
 }
 
@@ -188,7 +188,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #f8312a; /* Red background for icons */
+  background-color: #f84404; /* Red background for icons */
   display: flex;
   justify-content: center;
   align-items: center;

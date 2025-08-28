@@ -18,7 +18,7 @@
 
 /* Style for when the game is closed */
 .game-status.closed {
-  color: #dc3545; /* Red color */
+  color: #f84404; /* Red color */
 }
 
 .game-tab {
@@ -26,7 +26,7 @@
   align-items: center;
   gap: 8px;
   padding: 8px 18px;
-  background: #fc481b; /* Changed from #ffb81c to a reddish color (Crimson) */
+  background: #f84404; /* Changed from #ffb81c to a reddish color (Crimson) */
   border: none;
   border-radius: 24px;
   font-weight: 600;

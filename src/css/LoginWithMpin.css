@@ -42,7 +42,7 @@
   padding: 14px;
   font-size: 16px;
   font-weight: bold;
-  background-color: #f63c1b;
+  background-color: #f84404;
   border: none;
   border-radius: 10px;
   color: #000;
@@ -51,7 +51,7 @@
 }
 
 .mpin-login-btn:hover {
-  background-color: #f74012;
+  background-color: #f84404;
 }
 
 .mpin-forgot a {
