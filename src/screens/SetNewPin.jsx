@@ -5,6 +5,7 @@ import "../css/mainhome.css";
 import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import {toast} from "react-toastify";
+import AuthHeader from "../components/AuthHeader";
 export default function SetNewPinScreen() {
   const { mobileNo } = useContext(AppContext);
   const [otp, setOtp] = useState("");
@@ -31,7 +32,7 @@ export default function SetNewPinScreen() {
   useEffect(() => {
     const sendOtp = async () => {
       try {
-        const res = await axios.post("https://sarra777.net/api/v1/send-otp", { mobileNo });
+        const res = await axios.post("https://admin.gama567.club/api/v1/send-otp", { mobileNo });
         console.log("✅ OTP sent:", res.data);
         hasSentOtp.current = true;
         sessionStorage.setItem("otpSent", "true");
@@ -67,7 +68,7 @@ export default function SetNewPinScreen() {
     }
 
     try {
-      const res = await axios.post("https://sarra777.net/api/v1/reset-mpin", {
+      const res = await axios.post("https://admin.gama567.club/api/v1/reset-mpin", {
         mobileNo,
         otp: parseInt(otp),
         security_pin: parseInt(pin),
@@ -96,13 +97,15 @@ export default function SetNewPinScreen() {
 
   return (
     <div className="mainhome-screen-wrapper">
+       <AuthHeader title="SET NEW PIN" />
       <div className="setpin-content-wrapper">
-        <div className="heading-row">
+        {/* <div className="heading-row">
           <span className="accent-bar" />
           <h1>
             SET NEW<br />PIN
           </h1>
-        </div>
+        </div> */}
+         
 
         <label className="field-label">Enter OTP</label>
         <input
@@ -133,7 +136,7 @@ export default function SetNewPinScreen() {
             className="resend-link"
             onClick={async () => {
               try {
-                await axios.post("https://sarra777.net/api/v1/send-otp", { mobileNo });
+                await axios.post("https://admin.gama567.club/api/v1/send-otp", { mobileNo });
                 setSec(240);
                 hasSentOtp.current = true;
                 sessionStorage.setItem("otpSent", "true");

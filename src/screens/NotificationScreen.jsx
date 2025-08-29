@@ -17,7 +17,7 @@ export default function NotificationScreen() {
       const mobileNo=localStorage.getItem("mobileNo");
       try {
         const response = await axios.get(
-          "https://sarra777.net/api/v1/notice-history",
+          "https://admin.gama567.club/api/v1/notice-history",
           {
             mobileNo: mobileNo, // ✅ dynamic mobile number
           },

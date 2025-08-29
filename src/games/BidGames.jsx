@@ -496,7 +496,7 @@ const { totalBids, totalPoints, bidsForList } = useMemo(() => {
       
       const token = localStorage.getItem("accessToken");
       const response = await axios.post(
-        "https://sarra777.net/api/v1/digit-based-jodi",
+        "https://admin.gama567.club/api/v1/digit-based-jodi",
         requestBody,
         { headers: {"Authorization": `Bearer ${token}`,
       "Content-Type": "application/json",
@@ -542,7 +542,7 @@ const { totalBids, totalPoints, bidsForList } = useMemo(() => {
     try {
       const token = localStorage.getItem("accessToken");
       const response = await axios.post(
-        "https://sarra777.net/api/v1/two-digits-panel-pana",
+        "https://admin.gama567.club/api/v1/two-digits-panel-pana",
         {
           digit: parseInt(digit, 10), // The 2-digit number
           sessionType: selectedGameType.toLowerCase(),
@@ -695,7 +695,7 @@ const handleBracketGenerate = async () => {
     const token = localStorage.getItem("accessToken");
     // IMPORTANT: Use your actual endpoint for Bracket generation
     const response = await axios.post(
-      "https://sarra777.net/api/v1/red-bracket-jodi", 
+      "https://admin.gama567.club/api/v1/red-bracket-jodi", 
       {
         type: bracketType, // 'halfBracket' or 'fullBracket'
         amount: parseInt(points, 10),
@@ -761,7 +761,7 @@ const handleAddBid = async() => {
     const token = localStorage.getItem("accessToken");
     // IMPORTANT: Replace with your actual endpoint for DP Motor generation
     const response = await axios.post(
-      "https://sarra777.net/api/v1/dp-motor-pana", 
+      "https://admin.gama567.club/api/v1/dp-motor-pana", 
       {
         digit: digit, // Pass the full number as a string or number
         amount: parseInt(points, 10),
@@ -823,7 +823,7 @@ if (gameType === 'spMotor') {
     const token = localStorage.getItem("accessToken");
     // IMPORTANT: Replace with your actual endpoint for SP Motor generation
     const response = await axios.post(
-      "https://sarra777.net/api/v1/sp-motor-pana", 
+      "https://admin.gama567.club/api/v1/sp-motor-pana", 
       {
         digit: digit,
         amount: parseInt(points, 10),
@@ -879,7 +879,7 @@ if (gameType === 'spMotor') {
       // 2. Make the API Call
       const token = localStorage.getItem("accessToken");
       const response = await axios.post(
-        "https://sarra777.net/api/v1/panel-group-pana", // IMPORTANT: Replace with your actual endpoint
+        "https://admin.gama567.club/api/v1/panel-group-pana", // IMPORTANT: Replace with your actual endpoint
         {
           digit: parseInt(digit, 10),
           amount: parseInt(points, 10),
@@ -979,7 +979,7 @@ if (gameType === 'groupJodi') {
     const token = localStorage.getItem("accessToken");
     // IMPORTANT: Use your actual endpoint for Group Jodi generation
     const response = await axios.post(
-      "https://sarra777.net/api/v1/group-jodi", 
+      "https://admin.gama567.club/api/v1/group-jodi", 
       {
         digit: digit,
         amount: parseInt(points, 10),
@@ -1132,7 +1132,7 @@ const handleNumpadApiClick = async (digit) => {
   try {
     const token = localStorage.getItem("accessToken");
     const response = await axios.post(
-      `https://sarra777.net/api/v1/${gameType.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`)}`,
+      `https://admin.gama567.club/api/v1/${gameType.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`)}`,
       { digit, sessionType: selectedGameType.toLowerCase(), amount: parseInt(points, 10) },
       { headers: { "Authorization": `Bearer ${token}`, /* ...other headers... */ } }
     );
@@ -1206,13 +1206,13 @@ const handleGenerateBids = async () => {
     let apiEndpoint = '';
   switch (pannaType) {
     case 'SP':
-      apiEndpoint = 'https://sarra777.net/api/v1/single-pana-bulk';
+      apiEndpoint = 'https://admin.gama567.club/api/v1/single-pana-bulk';
       break;
     case 'DP':
-      apiEndpoint = 'https://sarra777.net/api/v1/double-pana-bulk';
+      apiEndpoint = 'https://admin.gama567.club/api/v1/double-pana-bulk';
       break;
     case 'TP':
-      apiEndpoint = 'https://sarra777.net/api/v1/triple-pana-bulk';
+      apiEndpoint = 'https://admin.gama567.club/api/v1/triple-pana-bulk';
       break;
     default:
       setIsLoading(false);

@@ -26,7 +26,7 @@ export default function ChartDetail() {
       try {
         const token = localStorage.getItem("accessToken");
         const response = await axios.post(
-          "https://sarra777.net/api/v1/table-chart", // Assuming this is the correct endpoint
+          "https://admin.gama567.club/api/v1/table-chart", // Assuming this is the correct endpoint
           {
             gameId: parseInt(gameId, 10), // Send the gameId from the URL
             gameType: "game"

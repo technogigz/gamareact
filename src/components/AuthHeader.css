@@ -1,0 +1,57 @@
+:root {
+  /* tweak if your brand orange differs */
+  --brand-orange: #f4511e;
+}
+
+/* Header container */
+.auth-header {
+  position: relative;
+  width: 100%;
+  height: 260px;                    /* matches the screenshot height */
+  background: var(--brand-orange);
+  color: #fff;
+  overflow: hidden;
+  /* safe-area for notch devices */
+  padding-top: calc(env(safe-area-inset-top, 0px) + 8px);
+}
+
+
+
+/* Content row */
+.auth-header__inner {
+      position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 24px 20px 16px 20px;      /* left text alignment like screenshot */
+}
+
+/* Title (e.g., “Login”) */
+.auth-header__title {
+  margin: 12px 0 0 6px;
+  font-size: 28px;                  /* tuned for 360–400px mobile width */
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-shadow: 0 0 1px rgba(0,0,0,0.06);
+}
+
+/* Faint card watermark on the right */
+.auth-header__art {
+  position: absolute;
+  right: -8px;                      /* tucks into the edge like screenshot */
+  top: 8px;
+  width: 240px;
+  height: 150px;
+  opacity: 0.12;                    /* soft / blurred look */
+  fill: #ffffff;
+  pointer-events: none;
+}
+
+/* Optional: scale nicely inside your mobile wrapper */
+@media (min-width: 768px) {
+  .auth-header { height: 210px; }
+  .auth-header__title { font-size: 30px; }
+}

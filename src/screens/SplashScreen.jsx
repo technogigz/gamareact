@@ -1,12 +1,12 @@
 import React , {useEffect} from 'react';
 import '../css/SplashScreen.css';
-import splashIMG from '../assets/images/clear.jpg'
+import splashIMG from '../assets/images/yess.png'
 import { useNavigate } from 'react-router-dom';
 import "../css/mainhome.css"
 
 const SplashScreen = () => {
   const navigate = useNavigate();
-  
+  //735017
 
    useEffect(() => {
        // Check if the user has logged in before

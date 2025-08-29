@@ -90,7 +90,7 @@ export default function PassbookScreen() {
 
     try {
       const response = await axios.post(
-        "https://sarra777.net/api/v1/passbook-history", // Replace with actual endpoint
+        "https://admin.gama567.club/api/v1/passbook-history", // Replace with actual endpoint
         {
           registerId: registerId,
           pageIndex: pageIndex,

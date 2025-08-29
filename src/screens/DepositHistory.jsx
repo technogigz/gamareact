@@ -21,7 +21,7 @@ export default function DepositHistoryScreen() {
       }
 
       const res = await axios.post(
-        "https://sarra777.net/api/v1/deposit-fund-history",
+        "https://admin.gama567.club/api/v1/deposit-fund-history",
         {
           registerId,
           pageIndex: 1,

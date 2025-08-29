@@ -1,15 +1,18 @@
 /* Outer wrapper for mobile layout */
 .mobile-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 24px;
-  box-sizing: border-box;
-  background: #f2f2f2;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    box-sizing: border-box;
+    background: #f2f2f2;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    border-radius: 30px 0px 0px 0px;
+    z-index: 10000;
+    margin-top: -30px;
 }
 
 /* Simulated mobile frame style on larger screens */
@@ -18,7 +21,7 @@
     width: 360px;
     height: 780px;
     margin: auto;
-    border-radius: 32px;
+    border-radius: 32px 0px 0px 0px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
   }
 }

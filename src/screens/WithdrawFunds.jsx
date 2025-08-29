@@ -95,7 +95,7 @@ export default function WithdrawFundsScreen() {
 
   try {
     const response = await axios.post(
-      "https://sarra777.net/api/v1/withdraw-fund-request", // Using your actual base URL
+      "https://admin.gama567.club/api/v1/withdraw-fund-request", // Using your actual base URL
       payload,
       {
         headers: {

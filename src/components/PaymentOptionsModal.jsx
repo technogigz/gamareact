@@ -25,7 +25,7 @@
 //       }
 
 //       const response = await axios.post(
-//         "https://sarra777.net/api/v1/deposit-create-upi-fund-request",
+//         "https://admin.gama567.club/api/v1/deposit-create-upi-fund-request",
 //         {
 //           registerId,
 //           depositType, // e.g., "googlePay"
@@ -187,7 +187,7 @@ const PaymentOptionsModal = ({ amount, onClose }) => {
 
       // 1) Create payment session
       const { data } = await axios.post(
-        'https://sarra777.net/api/v1/deposit-create-upi-fund-request',
+        'https://admin.gama567.club/api/v1/deposit-create-upi-fund-request',
         { registerId, depositType, amount: Number(amount), hashKey: 'chela' },
         {
           headers: {

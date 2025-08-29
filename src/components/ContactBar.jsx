@@ -51,7 +51,7 @@ export default function ContactBar({ number1, number2 }) {
 //       try {
 //         const token = localStorage.getItem("accessToken"); // Get the auth token
 //         const response = await axios.get(
-//           "https://sarra777.net/api/v1/contact-detail", // Your contact details endpoint
+//           "https://admin.gama567.club/api/v1/contact-detail", // Your contact details endpoint
 //           { mobileNo: mobileNo },
 //           {
 //              headers: {

@@ -9,6 +9,7 @@ import "../css/LoginWithMpin.css";
 import logo from "../assets/icons/logoGama.png";
 import "../css/mainhome.css";
 import { AppContext } from "../context/AppContext";
+import AuthHeader from "../components/AuthHeader";
 
 export default function LoginWithMPin() {
   const [mpin, setMpin] = useState("");
@@ -40,7 +41,7 @@ export default function LoginWithMPin() {
     try {
       // --- STEP 1: Verify the MPIN ---
       const verifyRes = await axios.post(
-        "https://sarra777.net/api/v1/verify-mpin",
+        "https://admin.gama567.club/api/v1/verify-mpin",
         { registerId, pinNo: parseInt(mpin) },
         {
           headers: {
@@ -62,7 +63,7 @@ export default function LoginWithMPin() {
 
       // --- STEP 2: PIN is correct, now fetch the full user profile ---
       const profileRes = await axios.post(
-        "https://sarra777.net/api/v1/user-details-by-register-id", // Your user profile endpoint
+        "https://admin.gama567.club/api/v1/user-details-by-register-id", // Your user profile endpoint
         { registerId },
         {
           headers: {
@@ -102,7 +103,9 @@ export default function LoginWithMPin() {
 
   return (
     <div className="mainhome-screen-wrapper">
+      <AuthHeader title="LOGIN" />
       <div className="mpin-container">
+       
         <img src={logo} alt="Sara777" className="mpin-logo" />
         <div className="mpin-card">
           <input

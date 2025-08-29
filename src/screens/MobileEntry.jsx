@@ -27,7 +27,7 @@
 //     }
 
 //     try {
-//       const res = await axios.post('https://sarra777.net/api/v1/check-mobile', { mobileNo: phone },
+//       const res = await axios.post('https://admin.gama567.club/api/v1/check-mobile', { mobileNo: phone },
 //         {
 //           headers: {
            
@@ -120,6 +120,7 @@ import '../css/MobileEntry.css';
 import kkko from '../assets/icons/phone_avatar.png';
 import { AppContext } from '../context/AppContext';
 import { toast } from 'react-toastify';
+import AuthHeader from '../components/AuthHeader';
 
 const MobileEntry = () => {
   const [phone, setPhone] = useState('');
@@ -135,7 +136,7 @@ const MobileEntry = () => {
 
     try {
       const res = await axios.post(
-        'https://sarra777.net/api/v1/check-mobile',
+        'https://admin.gama567.club/api/v1/check-mobile',
         { mobileNo: phone },
         { headers: { 'Content-Type': 'application/json' } }
       );
@@ -161,19 +162,21 @@ const MobileEntry = () => {
   return (
     <div className="mainhome-screen-wrapper">
       {/* Orange header */}
-      <header className="ms-hero">
+      {/* <header className="ms-hero">
         <h1 className="ms-hero-title">Enter Your Mobile Number</h1>
 
-        {/* optional faint cards watermark */}
+        
         <div className="ms-watermark">
           <div className="ms-card" />
           <div className="ms-card ms-card--top" />
         </div>
-      </header>
+      </header> */}
+       <AuthHeader title="Enter Mobile" />
 
       {/* White rounded panel */}
-      <main className="ms-panel">
+      {/* <main className="ms-panel"> */}
         {/* Big phone image */}
+        <div className='hul'>
         <div className="ms-phoneGlyph">
           <img src={kkko} alt="Phone" className="ms-phoneImg" />
         </div>
@@ -213,7 +216,8 @@ const MobileEntry = () => {
         <button className="ms-btn" type="button" onClick={handleNext}>
           Next
         </button>
-      </main>
+      {/* </main> */}
+      </div>
 
       {/* Recovery Modal */}
       {showModal && (

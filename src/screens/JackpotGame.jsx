@@ -46,7 +46,7 @@ const JackpotGames = () => {
         const token = localStorage.getItem('accessToken');
         // CAUTION: Please replace with your actual API endpoint for starline game types
         const response = await axios.get(
-          'https://sarra777.net/api/v1/jackpot-game-bid-type', 
+          'https://admin.gama567.club/api/v1/jackpot-game-bid-type', 
           { mobileNo },
           {
             headers: {

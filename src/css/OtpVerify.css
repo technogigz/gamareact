@@ -22,13 +22,17 @@
 /* Main screen container */
 .otp-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 24px;
-  padding-bottom: 48px;
-  width: 100vw;
-  height: 100vh;
-  box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    padding-bottom: 48px;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    border-radius: 50px 0px 0px 0px;
+    z-index: 1000000;
+    background-color: #f2f2f2;
+    margin-top: -38px;
 }
 
 /* .otp-container {
@@ -106,7 +110,7 @@
 
 /* OTP input field */
 .otp-input {
-  width: 100%;
+  width: 93%;
   padding: 14px;
   font-size: 18px;
   border-radius: 8px;

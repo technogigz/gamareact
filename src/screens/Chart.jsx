@@ -27,7 +27,7 @@ export default function ChartsScreen() {
         
         // This is the same API call from your MainHome screen
         const response = await axios.get(
-          "https://sarra777.net/api/v1/chart-game-list",
+          "https://admin.gama567.club/api/v1/chart-game-list",
           { mobileNo :mobileNo},
           {
             headers: {

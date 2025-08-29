@@ -5,6 +5,7 @@ import '../css/OtpVerify.css';
 import { AppContext } from '../context/AppContext';
 import jijij from '../assets/icons/verification_avatar.png';
 import {toast} from "react-toastify";
+import AuthHeader from '../components/AuthHeader';
 
 const RESEND_DELAY = 240;
 
@@ -20,7 +21,7 @@ const OtpVerify = () => {
   useEffect(() => {
     const sendOtp = async () => {
       try {
-        const res = await axios.post('https://sarra777.net/api/v1/send-otp', { mobileNo });
+        const res = await axios.post('https://admin.gama567.club/api/v1/send-otp', { mobileNo });
         console.log('OTP API Response:', res.data);
         if (!res.data.status) {
          // alert('Failed to send OTP');
@@ -58,7 +59,7 @@ const OtpVerify = () => {
     }
           setIsLoading(true);
     try {
-      const registerRes = await axios.post('https://sarra777.net/api/v1/user-register', {
+      const registerRes = await axios.post('https://admin.gama567.club/api/v1/user-register', {
         fullName: user,
         mobileNo,
         otp: parseInt(otp),
@@ -71,7 +72,7 @@ const OtpVerify = () => {
         localStorage.setItem('registerId', registerId);
          
            const profileRes = await axios.post(
-          "https://sarra777.net/api/v1/user-details-by-register-id",
+          "https://admin.gama567.club/api/v1/user-details-by-register-id",
           { registerId },
           { headers: { "Authorization": `Bearer ${accessToken}`, /* ...other headers... */ } }
         );
@@ -114,7 +115,7 @@ const OtpVerify = () => {
     if (secondsLeft > 0) return;
 
     try {
-      const res = await axios.post('https://sarra777.net/api/v1/send-otp', { mobileNo });
+      const res = await axios.post('https://admin.gama567.club/api/v1/send-otp', { mobileNo });
       if (res.data.status === true) {
         setSecondsLeft(RESEND_DELAY);
       //  alert('OTP resent successfully!');
@@ -129,17 +130,20 @@ const OtpVerify = () => {
   };
 
   return (
-    <div className="otp-wrapper">
+    <div className="mainhome-screen-wrapper">
+      
+        <AuthHeader title="VERIFY YOUR MOBILE NUMBER" />
       <div className="otp-container">
-        <div className="otp-heading">
+       
+        {/* <div className="otp-heading">
           <span className="accent-bar" />
           <h2>
             VERIFY YOUR <br />
             <strong>MOBILE NUMBER</strong>
           </h2>
-        </div>
-
-        <img src={jijij} alt="OTP Illustration" className="otp-image" />
+        </div> */}
+ <div className='llll'>
+        {/* <img src={jijij} alt="OTP Illustration" className="otp-image" /> */}
 
         <div className="otp-subtext">
           <h3>Verification Code</h3>
@@ -170,6 +174,7 @@ const OtpVerify = () => {
             Resend OTP
           </button>
         )}
+      </div>
       </div>
     </div>
   );

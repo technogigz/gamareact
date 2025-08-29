@@ -4,7 +4,7 @@ import '../css/SetPin.css';
 import { AppContext } from '../context/AppContext';
 import iemg from "../assets/icons/set_mpin_avatar.png"
 import axios from 'axios'
-
+import AuthHeader from '../components/AuthHeader';
 function SetPin() {
   const [pin, setPin] = useState('');
   const { setUserPin ,mobileNo  } = useContext(AppContext);
@@ -21,15 +21,20 @@ function SetPin() {
 
 
   return (
-    <div className="mobile-wrapper">
+    <>
+    <div className='mainhome-screen-wrapper'>
+       <AuthHeader title="SET YOUR PIN" />
+        <div className="mobile-wrapper">
+   
       {/* ── Header (bar + text) ───────────────────── */}
-      <div className="header-row">
+      {/* <div className="header-row">
         <span className="side-bar" />
         <h2>
           SET YOUR <br /> PIN
         </h2>
-      </div>
-
+      </div> */}
+        
+    <div className='jjj'>
       {/* ── Illustration ─────────────────────────── */}
       <div className="illu-box">
         <img src={iemg} alt="Set PIN" />
@@ -51,6 +56,10 @@ function SetPin() {
         </button>
       </div>
     </div>
+    </div>
+    </div>
+    </>
+   
   );
 }
 

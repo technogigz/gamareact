@@ -1,0 +1,168 @@
+/* THEME (tweak if needed to match the screenshot exactly) */
+:root {
+  --brand: #f04d06;           /* bright orange */
+  --ink: #0a0a0a;             /* dark icon */
+  --title: #ffffff;           /* hero title */
+  --label: #263049;           /* "Confirm MPIN" text */
+  --muted: #9aa3b3;
+  --sheet: #f2f2f2;
+  --sheet-grad: radial-gradient(120% 80% at 52% 40%, #f6f7f9 0%, #eef1f6 55%, #e8ebf1 90%);
+  --radius-big: 74px;
+  --side: 22px;               /* horizontal padding for content */
+  --hero-h: clamp(180px, 25vh, 220px);
+  --illustration-gap: 26px;
+}
+
+/* Keep inheriting your outer phone wrapper: .mainhome-screen-wrapper */
+
+.mf-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- ORANGE TOP ---------- */
+.mf-hero {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: var(--hero-h);
+  background: var(--brand);
+  overflow: hidden;
+}
+
+.mf-hero-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-left: calc(var(--side) - 2px);
+  display: flex;
+  align-items: center;      /* vertically centers the title like screenshot */
+}
+
+.mf-hero-title {
+  margin: 0;
+  color: var(--title);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  font-size: 22px;          /* visually matches "Set Your MPIN" size */
+}
+
+/* Right watermark (playing cards) */
+.mf-hero-watermark {
+  position: absolute;
+  right: -18px;
+  top: -2px;
+  width: 250px;
+  height: 170px;
+  transform: rotate(-6deg);
+  pointer-events: none;
+}
+
+/* ---------- LIGHT SHEET (rounded top-left) ---------- */
+.mf-sheet {
+  position: absolute;
+  top: calc(var(--hero-h) - 38px); /* overlap creates the large rounded corner look */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--sheet-grad);
+  border-top-left-radius: var(--radius-big);
+  border-top-right-radius: 0;
+  padding: 0 var(--side);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* center illustration */
+.mf-illustration {
+  margin: calc(var(--illustration-gap) + 4px) auto 22px;
+  width: 112px;
+  height: 118px;
+  display: grid;
+  place-items: center;
+}
+
+/* content column */
+.mf-content {
+  display: block;
+}
+
+/* ---------- FORM FIELDS ---------- */
+.mf-field {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  align-items: end;
+  column-gap: 12px;
+  margin: 8px 0 26px;
+}
+
+.mf-field-icon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+}
+
+.mf-field-col {
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 4px;
+}
+
+.mf-field-hint {
+  font-size: 12.5px;
+  color: var(--label);
+  opacity: 0.95;
+}
+
+.mf-field-hint.mf-accent { color: var(--brand); }
+
+/* underline inputs that match the screenshot */
+.mf-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 6px 0 8px;
+  font-size: 16px;
+  color: #0f1a2a;
+}
+
+.mf-input.underline {
+  border-bottom: 1.5px solid rgba(0,0,0,0.2);
+}
+
+.mf-input.underline.accent {
+  border-bottom-color: var(--brand);
+}
+
+.mf-input:focus {
+  border-bottom: 2px solid var(--brand);
+}
+
+/* ---------- CTA BUTTON ---------- */
+.mf-primary-btn {
+  margin: 26px auto 18px;
+  width: 86%;
+  height: 54px;
+  border: none;
+  border-radius: 28px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--brand);
+  box-shadow: 0 6px 18px rgba(240, 77, 6, 0.25);
+  letter-spacing: 0.2px;
+}
+
+.mf-primary-btn:active { transform: translateY(1px); }
+
+/* ---------- DESKTOP "phone frame" (inherits your wrapper rules) ---------- */
+@media (min-width: 768px) {
+  /* nothing extra; your .mainhome-screen-wrapper handles the frame */
+}

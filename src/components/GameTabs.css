@@ -3,7 +3,7 @@
 .game-tabs-wrapper {
   display: flex;
   gap: 10px;
-  padding: 12px 7px;
+  padding: 12px 7px 28px;
   justify-content: space-between;
   background: #f2f2f2; /* ← match header bg */
   overflow-x: auto;
@@ -25,17 +25,59 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 18px;
-  background: #f84404; /* Changed from #ffb81c to a reddish color (Crimson) */
-  border: none;
-  border-radius: 24px;
+  padding: 19px 18px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
+  justify-content: center;
   white-space: nowrap;
-  color: #fff; /* Changed from #000 to white */
   font-family: "Poppins", sans-serif !important;
   width: 50%;
+  position: relative;
+}
+
+.game-tab.bgchanges{
+
+   background: #f84404; /* Changed from #ffb81c to a reddish color (Crimson) */
+   border: 1px solid #f84404;
+   color: #fff;
+}
+
+.game-tab.bgchangeg2{
+
+  background-color: transparent;
+  border: 1px solid #f84404;
+  color: #f84404;
+}
+
+.btn_playebg{
+
+  padding: 6px 25px;
+  border-radius: 8px;
+  text-align: center;
+
+}
+
+.btn_playebg.bgred{
+
+  background-color: #f84404;
+  color: #fff;
+  border: 0;
+}
+
+.btn_playebg.bgrednone{
+
+  background-color: #fff;
+  border: 1px solid #f84404;
+  color: #f84404;
+}
+.playbts{
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -30%;
 }
 
 .iccon-play {

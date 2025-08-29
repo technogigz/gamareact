@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // CAUTION: It's best to store your base URL in a configuration or environment file (.env).
-const API_BASE_URL = 'https://sarra777.net/api/v1';
+const API_BASE_URL = 'https://admin.gama567.club/api/v1';
 
 /**
  * A reusable function to place bids for all game types.

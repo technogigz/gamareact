@@ -84,7 +84,7 @@
 //       const token = localStorage.getItem("accessToken");
 //       // --- STEP 4: Make the confirmation API call ---
 //       const response = await axios.post(
-//         "https://sarra777.net/api/v1/add-upi-deposit-fund-request",
+//         "https://admin.gama567.club/api/v1/add-upi-deposit-fund-request",
 //         txDetails, // Send all the saved details
 //         { headers: { "Authorization": `Bearer ${token}`,
 //             "Content-Type": "application/json",
@@ -264,7 +264,7 @@ const AddFundsScreen = () => {
       if (!token) throw new Error('Missing token');
 
       const res = await axios.post(
-        'https://sarra777.net/api/v1/add-upi-deposit-fund-request',
+        'https://admin.gama567.club/api/v1/add-upi-deposit-fund-request',
         txDetails,
         {
           headers: {
@@ -369,7 +369,7 @@ const AddFundsScreen = () => {
       console.log(requestBody);
 
       const res = await axios.post(
-        'https://sarra777.net/api/v1/create-transaction-link', // <-- Make sure to use your actual endpoint
+        'https://admin.gama567.club/api/v1/create-transaction-link', // <-- Make sure to use your actual endpoint
         requestBody,
         { headers: {  Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json',

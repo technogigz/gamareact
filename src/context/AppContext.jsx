@@ -75,7 +75,7 @@ const fetchUserProfile = useCallback(async () => {
   setLoading(true);
   try {
     const response = await axios.post(
-      "https://sarra777.net/api/v1/user-details-by-register-id",
+      "https://admin.gama567.club/api/v1/user-details-by-register-id",
       { registerId },
       { 
         headers: { 
@@ -195,7 +195,7 @@ const fetchUserProfile = useCallback(async () => {
     
 //     try {
 //       const response = await axios.post(
-//         "https://sarra777.net/api/v1/user-details-by-register-id",
+//         "https://admin.gama567.club/api/v1/user-details-by-register-id",
 //         { registerId },
 //         { 
 //           headers: { 
@@ -233,7 +233,7 @@ const fetchUserProfile = useCallback(async () => {
 //       if (storedMobileNo) {
 //         try {
 //            const response = await axios.get(
-//             "https://sarra777.net/api/v1/fees-settings",
+//             "https://admin.gama567.club/api/v1/fees-settings",
 //             {
 //               params: {
 //                 mobileNo: storedMobileNo // For GET requests, data is sent in 'params'

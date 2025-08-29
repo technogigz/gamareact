@@ -21,7 +21,7 @@ export default function BidHistoryScreen() {
       const token = localStorage.getItem("accessToken");
 
       const res = await axios.post(
-        "https://sarra777.net/api/v1/bet-history",
+        "https://admin.gama567.club/api/v1/bet-history",
         {
           registerId,
           pageIndex: 1,

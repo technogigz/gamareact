@@ -1,10 +1,13 @@
 /* Full‑height white screen */
 .setpin-content-wrapper {
-  padding: 0 20px 24px; 
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  background-color: #fff;
+  padding: 26px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    z-index: 1000;
+    margin-top: -35px;
+    background-color: #fff;
+    border-radius: 40px 0px 0px 0px;
 }
 
 
@@ -20,7 +23,7 @@
 .accent-bar {
   width: 8px;
   height: 72px;
-  background: #f66b1b;          /* yellow */
+  background: #f84404;          /* yellow */
   border-radius: 3px;
 }
 
@@ -56,7 +59,7 @@
 /* Yellow button */
 .setpin-btn {
   width: 100%;
-  background: #f66b1b;
+  background: #f84404;
   border: none;
   padding: 16px 0;
   font-size: 16px;
@@ -81,7 +84,7 @@
 .resend-link {
   background: none;
   border: none;
-  color: #f66b1b;
+  color: #f84404;
   font-weight: 600;
   margin: 24px auto 0;
   cursor: pointer;

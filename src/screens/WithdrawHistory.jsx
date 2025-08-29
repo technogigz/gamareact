@@ -25,7 +25,7 @@ export default function WithdrawHistoryScreen() {
 
         // API call to the withdrawal history endpoint
         const res = await axios.post(
-          "https://sarra777.net/api/v1/withdrawal-fund-history", // Assumed endpoint for withdrawals
+          "https://admin.gama567.club/api/v1/withdrawal-fund-history", // Assumed endpoint for withdrawals
           {
             registerId,
             pageIndex: 1,

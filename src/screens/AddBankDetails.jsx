@@ -37,7 +37,7 @@ export default function AddBankDetailsScreen() {
 
     try {
       const res = await axios.post(
-        "https://sarra777.net/api/v1/update-bank-details", // Replace with your actual API URL
+        "https://admin.gama567.club/api/v1/update-bank-details", // Replace with your actual API URL
         payload,
         {
           headers: {

@@ -12,6 +12,9 @@ import BottomNav from "../components/BottomNav";
 import Sidebar from "../components/SideBar";
 import ClosedModal from "../components/ClosedModal";
 import { AppContext } from "../context/AppContext";
+import { toast } from 'react-toastify';
+
+
 export default function MainHome() {
   const [games, setGames] = useState([]);
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -38,7 +41,7 @@ export default function MainHome() {
       }
 
       const response = await axios.post(
-        "https://sarra777.net/api/v1/game-list",
+        "https://admin.gama567.club/api/v1/game-list",
         { registerId },
         {
           headers: {
@@ -74,7 +77,7 @@ export default function MainHome() {
       try {
         const token = localStorage.getItem("accessToken");
         const response = await axios.get(
-          "https://sarra777.net/api/v1/contact-detail", // IMPORTANT: Replace with your actual settings endpoint
+          "https://admin.gama567.club/api/v1/contact-detail", // IMPORTANT: Replace with your actual settings endpoint
           {
             headers: {
               "Content-Type": "application/json",
@@ -112,7 +115,7 @@ export default function MainHome() {
 const handleGameClick = (game) => {
   if (!user?.accountStatus) {
       // Show a message and stop the function
-      alert("Your account is currently inactive. Please contact support.");
+       // toast.error('Your account is currently inactive.Please contact support.');
       return; 
     }
   if (!game.playStatus) {

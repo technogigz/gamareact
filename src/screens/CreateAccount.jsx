@@ -4,6 +4,7 @@ import '../css/CreateAccount.css';
 import { AppContext } from '../context/AppContext';
 import SaraLogo from "../assets/icons/logoGama.png";
 import jjlogo from "../assets/icons/bank.png"
+import AuthHeader from '../components/AuthHeader';
 function CreateAccount() {
   const [username, setUsername] = useState('');
   const { setUser } = useContext(AppContext);
@@ -26,17 +27,21 @@ function CreateAccount() {
 
   return (
     <div className="mobile-screen-wrapper">
+             <AuthHeader title="Create New Account" />
+      
       <div className="create-account-page">
         {/* Header */}
-        <div className="header-section">
+        {/* <div className="header-section">
   <div className="bar" />
   <div className="header-text">
     <h2>
       CREATE YOUR NEW <br /> ACCOUNT
     </h2>
   </div>
-</div>
+</div> */}
 
+           
+     
 
         {/* Logo */}
         <div className="logo-image-wrapper">
