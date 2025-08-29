@@ -226,8 +226,3 @@
 }
 
 /* Disabled state for the whole card */
-.game-card.disabled {
-  opacity: 0.6;
-  pointer-events: none;
-  cursor: not-allowed;
-}

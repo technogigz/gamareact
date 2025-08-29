@@ -272,8 +272,8 @@ export default function OpenGame() {
 
   // Fixed tone for each known card name (matches the screenshot colors)
   // Pick a random fallback tone when no rule matches
-  
-const _fallbackTones = ["peach", "sand", "teal", "blue"];
+
+const _fallbackTones = ["peach", "sand", "teal", "blue","pink"];
 const _randFallbackTone = () =>
   _fallbackTones[(Math.random() * _fallbackTones.length) | 0];
 

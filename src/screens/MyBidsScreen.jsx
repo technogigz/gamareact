@@ -127,7 +127,7 @@ export default function MyBidsScreen() {
       )}
 
       {/* Same block layout as Funds screen */}
-      <div className="funds-grid">
+      <div className="funds-grid square">
         {tiles.map((t) => (
           <button
             key={t.title}

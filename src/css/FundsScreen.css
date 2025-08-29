@@ -118,3 +118,59 @@
 
 /* --- Keep your old list styles in case other screens use them, 
    but they are not used here. --- */
+
+
+
+
+
+   /* MyBids: force perfect-square tiles without affecting other screens */
+.funds-grid.square .funds-tile{
+  aspect-ratio: 1 / 1;   /* 👈 makes each tile a square */
+  min-height: 0;         /* override any earlier min-height */
+  padding: 18px 12px 26px;
+  justify-content: center;
+}
+
+/* scale inner circle nicely across phones */
+.funds-grid.square .tile-icon-wrap{
+  width: clamp(64px, 26vw, 88px);
+  height: clamp(64px, 26vw, 88px);
+}
+
+.funds-grid.square .tile-title{
+  margin-top: 10px;
+  font-size: clamp(13px, 3.6vw, 15px);
+}
+
+.funds-grid.square .tile-accent{
+  width: 52%;
+  max-width: 82px;
+  height: 6px;
+  bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* MyBids grid: pack rows at the top (no vertical stretching) */
+.funds-grid.square{
+  align-content: start;   /* ⬅️ key line */
+  justify-content: start; /* keep left-aligned */
+  gap: 18px;              /* tighter spacing (optional) */
+}
+
+/* keep tiles perfectly square (from earlier step) */
+.funds-grid.square .funds-tile{
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+  padding: 18px 12px 26px;
+  justify-content: center;
+}
+

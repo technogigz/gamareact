@@ -312,7 +312,7 @@ export default function FundsScreen() {
       )}
 
       {/* GRID like screenshot */}
-      <div className="funds-grid">
+      <div className="funds-grid square">
         {tiles.map((t) => (
           <button
             key={t.title}
