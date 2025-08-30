@@ -98,7 +98,7 @@
 }
 .ms-inputIcon{
   position: absolute;
-  left: 4px; top: 31px;
+  left: 4px; top: 0px;
   width: 24px; height: 24px;
   display: grid; place-items: center;
 }

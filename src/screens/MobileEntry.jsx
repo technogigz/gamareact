@@ -185,14 +185,14 @@ const MobileEntry = () => {
         <div className="ms-inputRow">
           <div className="ms-inputIcon" aria-hidden="true">
             {/* tiny phone icon */}
-            <svg width="22" height="22" viewBox="0 0 24 24">
+            <svg width="34" height="34" viewBox="0 0 24 24">
               <rect x="6" y="3" width="12" height="18" rx="2" fill="none" stroke="#666" strokeWidth="1.6"/>
               <rect x="9" y="5.5" width="6" height="1.6" rx="0.8" fill="#666"/>
               <rect x="9" y="17.6" width="6" height="2.2" rx="1.1" fill="#666"/>
             </svg>
           </div>
 
-          <label htmlFor="mobile" className="ms-label">Enter Mobile Number</label>
+          {/* <label htmlFor="mobile" className="ms-label">Enter Mobile Number</label> */}
 
           <input
             id="mobile"
