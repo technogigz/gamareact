@@ -86,8 +86,8 @@
   height: 120px;
 }
 .ms-phoneImg{
-  width: 96px; height: 96px; object-fit: contain;
-  filter: drop-shadow(0 6px 16px rgba(0,0,0,.18));
+  width: 65px; height: 96px; object-fit: contain;
+  /* filter: drop-shadow(0 6px 16px rgba(0,0,0,.18)); */
 }
 
 /* input row */
@@ -98,7 +98,7 @@
 }
 .ms-inputIcon{
   position: absolute;
-  left: 4px; top: 0px;
+  left: -7px; top: 0px;
   width: 24px; height: 24px;
   display: grid; place-items: center;
 }
@@ -112,16 +112,16 @@
 }
 .ms-input{
   width: 100%;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: .4px;
   border: 0;
   background: transparent;
-  padding: 2px 0 8px;
+  padding: 2px 0 18px;
   outline: none;
   color: #121212;
 }
-.ms-input::placeholder{ color: #9aa3ad; font-weight: 500; }
+.ms-input::placeholder{ color: #121212; font-weight: 500; }
 
 /* underline */
 .ms-underline{
@@ -148,6 +148,7 @@
   box-shadow: 0 10px 24px rgba(240,75,24,.35);
   cursor: pointer;
   transition: transform .08s ease, filter .2s ease;
+  margin-top: 20px;
 }
 .ms-btn:active{ transform: translateY(1px) scale(.995); }
 .ms-btn:hover{ filter: brightness(1.02); }
@@ -193,4 +194,5 @@
     margin-top: -27px;
     z-index: 1000;
     background: #f2f2f2;
+    padding: 20px;
 }

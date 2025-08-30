@@ -41,34 +41,47 @@
   color: #333;
 }
 
+.sararr{
+
+  width: 65px;
+  margin-bottom: 30px;
+}
 /* Input box */
 .text-input {
   width: 100%;
-  background: #eaeaea;
+  background: transparent;
   border: none;
-  border-radius: 12px;
-  padding: 16px;
+  border-bottom: 1px solid #000;
+  /* border-radius: 12px; */
+  padding: 16px 0px;
   font-size: 16px;
-  
   outline: none;
- 
   box-sizing: border-box;        /* ← prevents overflow */
-  margin-bottom: 20px; 
+  margin-bottom: 40px; 
+}
+
+.text-input:focus{
+
+  border-color: #f84404;
 }
 
 /* Yellow button */
 .setpin-btn {
-  width: 100%;
-  background: #f84404;
+   width: 100%;
+  margin: 18px auto 8px;
+  display: block;
+  padding: 16px 24px;
   border: none;
-  padding: 16px 0;
-  font-size: 16px;
-  font-weight: 700;
-  color: #000;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  background: linear-gradient(180deg,var(--orange),var(--orange-700));
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 24px rgba(240,75,24,.35);
   cursor: pointer;
-  margin-top: 12px;
+  transition: transform .08s ease, filter .2s ease;
+  margin-top: 20px;
 }
 
 /* Countdown */

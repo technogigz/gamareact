@@ -10,6 +10,11 @@ body,
   font-family: "Poppins", sans-serif !important;
 }
 
+::placeholder{
+
+    font-family: "Poppins", sans-serif !important;
+}
+
 .App {
   text-align: center;
 }

@@ -117,7 +117,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../css/MobileEntry.css';
-import kkko from '../assets/icons/phone_avatar.png';
+import kkko from '../assets/icons/app.png';
 import { AppContext } from '../context/AppContext';
 import { toast } from 'react-toastify';
 import AuthHeader from '../components/AuthHeader';
@@ -171,7 +171,7 @@ const MobileEntry = () => {
           <div className="ms-card ms-card--top" />
         </div>
       </header> */}
-       <AuthHeader title="Enter Mobile" />
+       <AuthHeader title="Enter Your Mobile Number" />
 
       {/* White rounded panel */}
       {/* <main className="ms-panel"> */}
@@ -185,7 +185,7 @@ const MobileEntry = () => {
         <div className="ms-inputRow">
           <div className="ms-inputIcon" aria-hidden="true">
             {/* tiny phone icon */}
-            <svg width="34" height="34" viewBox="0 0 24 24">
+            <svg width="38" height="38" viewBox="0 0 24 24">
               <rect x="6" y="3" width="12" height="18" rx="2" fill="none" stroke="#666" strokeWidth="1.6"/>
               <rect x="9" y="5.5" width="6" height="1.6" rx="0.8" fill="#666"/>
               <rect x="9" y="17.6" width="6" height="2.2" rx="1.1" fill="#666"/>
@@ -213,7 +213,7 @@ const MobileEntry = () => {
         </div>
 
         {/* CTA */}
-        <button className="ms-btn" type="button" onClick={handleNext}>
+        <button className="ms-btn " type="button" onClick={handleNext}>
           Next
         </button>
       {/* </main> */}

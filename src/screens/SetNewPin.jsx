@@ -6,6 +6,7 @@ import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import {toast} from "react-toastify";
 import AuthHeader from "../components/AuthHeader";
+import kkko from '../assets/icons/app.png';
 export default function SetNewPinScreen() {
   const { mobileNo } = useContext(AppContext);
   const [otp, setOtp] = useState("");
@@ -105,21 +106,31 @@ export default function SetNewPinScreen() {
             SET NEW<br />PIN
           </h1>
         </div> */}
+
+        <div className="logo-image-wrapper">
+          <img
+            src={kkko}
+            alt="Sara777 Logo"
+            className="sararr"
+          />
+        </div>
          
 
-        <label className="field-label">Enter OTP</label>
+        {/* <label className="field-label">Enter OTP</label> */}
         <input
           type="text"
           className="text-input"
           value={otp}
+          placeholder="Enter OTP"
           onChange={(e) => setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))}
           maxLength={6}
         />
 
-        <label className="field-label">Enter New mPin</label>
+        {/* <label className="field-label">Enter New mPin</label> */}
         <input
           type="password"
           className="text-input"
+          placeholder="Enter New MPIN"
           value={pin}
           onChange={(e) => setPin(e.target.value.replace(/\D/g, "").slice(0, 4))}
           maxLength={4}

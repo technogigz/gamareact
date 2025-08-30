@@ -7,14 +7,26 @@
 .auth-header {
   position: relative;
   width: 100%;
-  height: 260px;                    /* matches the screenshot height */
-  background: var(--brand-orange);
+  height: 260px;
+  background: var(--brand-orange);  /* solid red background */
   color: #fff;
   overflow: hidden;
-  /* safe-area for notch devices */
   padding-top: calc(env(safe-area-inset-top, 0px) + 8px);
 }
 
+/* Faint background image (watermark style) */
+.auth-header::after {
+  content: "";
+  position: absolute;
+     top: -12px;
+    right: -89px;
+  bottom: 0;
+  left: 0;
+  background: url("../assets/images/tttt.png") no-repeat right top;
+  background-size: 315px auto;  
+  opacity: 0.15;               
+  pointer-events: none;         
+}
 
 
 /* Content row */
@@ -31,7 +43,7 @@
 /* Title (e.g., “Login”) */
 .auth-header__title {
   margin: 12px 0 0 6px;
-  font-size: 28px;                  /* tuned for 360–400px mobile width */
+  font-size: 18px;                  /* tuned for 360–400px mobile width */
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.2px;
