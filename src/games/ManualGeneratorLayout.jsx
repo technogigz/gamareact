@@ -1,5 +1,5 @@
 import React from 'react';
-
+import DateChip from '../components/DateChip';
 const ManualGeneratorLayout = ({
   points,
   setPoints,
@@ -29,6 +29,7 @@ const ManualGeneratorLayout = ({
 
   return (
     <>
+      <DateChip/>
     {showSessionSelector&&(
       <div className="input-row">
         <label>Select Game Type</label>

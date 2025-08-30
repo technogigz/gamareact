@@ -185,10 +185,12 @@ import iconWithdraw from "../assets/icons/withdrawal.png";
 import iconBank from "../assets/icons/bank.png";
 import axios from "axios";
 import { toast } from "react-toastify";
+import AppHeader from "../components/AppHeader";
 
 export default function FundsScreen() {
   const navigate = useNavigate();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const walletBalance=localStorage.getItem("walletBalance");
 
   useEffect(() => {
     const fetchFeeSettings = async () => {
@@ -305,11 +307,18 @@ export default function FundsScreen() {
 
   return (
     <div className="mainhome-screen-wrapper">
-      <Header walletCount={5} onMenuClick={() => setSidebarOpen(true)} />
+      {/* <Header walletCount={5} onMenuClick={() => setSidebarOpen(true)} />
 
       {isSidebarOpen && (
         <Sidebar isOpen={isSidebarOpen} onClose={() => setSidebarOpen(false)} />
-      )}
+      )} */}
+
+       <AppHeader
+        title="Funds"
+         walletBalance={walletBalance}
+        onBack={() => navigate(-1)}
+        onWalletClick={() => navigate("/passbook")}
+      />
 
       {/* GRID like screenshot */}
       <div className="funds-grid square">

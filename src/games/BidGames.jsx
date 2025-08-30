@@ -334,7 +334,7 @@ import { placeBids } from '../services/apiService';
 import BidSuccessDialog from '../components/BidSuccessDialog';
 import BidFailureDialog from '../components/BidFailureDialog';
 import BracketGeneratorLayout from './BracketLayout';
-
+import AppHeader from '../components/AppHeader';
 // Mock function for the final submission loop (as requested)
 
 
@@ -1584,7 +1584,13 @@ const handleGenerateBids = async () => {
   return (
     <div className="mainhome-screen-wrapper">
       <MessageBar message={message?.text} type={message?.type} />
-      <Header title={pageTitle} walletBalance={walletBalance} onBackClick={handleBackClick} />
+      {/* <Header title={pageTitle} walletBalance={walletBalance} onBackClick={handleBackClick} /> */}
+      <AppHeader
+              title={pageTitle}
+               walletBalance={walletBalance}
+              onBack={() => navigate(-1)}
+              onWalletClick={() => navigate("/passbook")}
+            />
       <main className="game-content">
         <div className="form-container">
           {(() => {

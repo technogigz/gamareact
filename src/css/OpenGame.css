@@ -6,6 +6,8 @@
   overflow-y:auto;
   -webkit-overflow-scrolling:touch;
   scrollbar-width:none;
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 65px); /* extra space at bottom */
+
 }
 
 .top-bar{
@@ -25,7 +27,7 @@
 .game-carrd{
   position:relative;
   border-radius:22px;
-  padding:10px 12px 28px;
+  padding:6px 6px 8px;
   min-height:134px;
    /* aspect-ratio: 1 / 1;   */
   background:var(--tile-bg, #f3f3f3);

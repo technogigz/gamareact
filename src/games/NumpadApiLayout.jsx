@@ -1,6 +1,6 @@
 import React from 'react';
 import Numpad from './Numpad';
-
+import DateChip from '../components/DateChip';
 const NumpadApiLayout = ({
   points,
   setPoints,
@@ -13,6 +13,7 @@ const NumpadApiLayout = ({
   openBidDisabled,
 }) => (
   <>
+    <DateChip/>
   {showSessionSelector &&(
     <div className="input-row">
       <label>Select Game Type:</label>

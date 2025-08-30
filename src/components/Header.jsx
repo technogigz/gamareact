@@ -63,9 +63,12 @@ export default function Header({ onMenuClick, isAccountActive }) {
     <header className="main-header">
       {/* Left Side: Hamburger Menu + Logo */}
       <div className="menu-logo">
-        <button className="icon-btn" onClick={onMenuClick}>
+        {/* <button className="icon-btn" onClick={onMenuClick}>
           <span className="icon-hamburger" />
-        </button>
+        </button> */}
+        <button className="menu-pill" onClick={onMenuClick} aria-label="Menu">
+  <span className="burger" />
+</button>
         <img src={grp} alt="Gama567 logo" className="logo" />
       </div>
 
@@ -83,13 +86,13 @@ export default function Header({ onMenuClick, isAccountActive }) {
           </button>
 
           {/* Notifications Button */}
-          {/* <button
+          <button
             className="icon-btn"
             onClick={() => navigate("/notifications")}
             aria-label="Notifications"
           >
             <span className="icon-bell" />
-          </button> */}
+          </button>
         </div>
       )}
     </header>

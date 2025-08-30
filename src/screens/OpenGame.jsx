@@ -193,7 +193,7 @@ import "../css/OpenGame.css";
 import backIcon from "../assets/icons/icons8-back-50.png";
 import "../css/mainhome.css";
 import InfoModal from "../components/infoModal";
-
+import AppHeader from "../components/AppHeader";
 export default function OpenGame() {
   const [gameTypes, setGameTypes] = useState([]);
   const [isBidTimePassed, setIsBidTimePassed] = useState(false);
@@ -203,7 +203,7 @@ export default function OpenGame() {
   const navigate = useNavigate();
   const { marketId } = useParams();
   const location = useLocation();
-
+const walletBalance=localStorage.getItem("walletBalance");
   const gameTitle   = location.state?.gameName || `Market ${marketId}`;
   const openBidTime = location.state?.openBidTime;
 
@@ -302,11 +302,20 @@ const toneFor = (name = "") => {
 
   return (
     <div className="mainhome-screen-wrapper">
+      
+       <AppHeader
+                                      title={gameTitle}
+                                       walletBalance={walletBalance}
+                                      onBack={() => navigate(-1)}
+                                      onWalletClick={() => navigate("/passbook")}
+                                    />
+                                    
       <div className="open-game-container">
-        <div className="top-bar">
+        {/* <div className="top-bar">
           <img src={backIcon} alt="Back" onClick={() => navigate(-1)} />
           <h2>{gameTitle}</h2>
-        </div>
+        </div> */}
+           
 
         <div className="game-grid">
           {gameTypes.map((type) => (

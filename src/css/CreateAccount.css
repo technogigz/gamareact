@@ -2,7 +2,7 @@
 .mobile-screen-wrapper {
   width: 100vw;
   height: 100vh;
-  background-color: #f2f2f2;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -28,7 +28,7 @@
     z-index: 10000;
     border-radius: 40px 0px 0px 0px;
     margin-top: -38px;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     box-sizing: border-box;
 }
 

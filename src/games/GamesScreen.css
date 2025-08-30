@@ -6,7 +6,7 @@
   --border-color: #ced4da;
   --bg-light: #f8f9fa;
   --bg-white: #ffffff;
-  --danger-red: #ff812d;
+  --danger-red: #ff5a1a;
   --success-green: #43a047;
 }
 
@@ -70,7 +70,7 @@ font-weight: 500; }
 }
 
 .btn-add-bid {
-  background-color: var(--danger-red); color: var(--dark-text); border: none; padding: 0.9rem; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 0.5rem;font-family: "Poppins", sans-serif;
+  background-color: var(--danger-red); color: var(--dark-text); border: none; padding: 0.9rem; border-radius: 40px; font-weight: 700; font-size: 0.9rem; cursor: pointer; margin-top: 0.5rem;font-family: "Poppins", sans-serif; color:#fff;    margin-left: 200px;
 }
 
 /* Bids List */
@@ -176,7 +176,7 @@ font-weight: 500; }
 
 
 .numpad-btn {
-  background-color: var(--danger-red);
+  background-color: #fff;
   color: var(--dark-text);
   border: none;
   border-radius: 8px;

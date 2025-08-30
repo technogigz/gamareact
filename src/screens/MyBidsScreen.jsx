@@ -91,11 +91,11 @@ import BidHis from "../assets/icons/auction.png";
 import Gamres from "../assets/icons/poker-game.png";
 import Ban from "../assets/icons/bank.png";
 import { useNavigate } from "react-router-dom";
-
+import AppHeader from "../components/AppHeader";
 export default function MyBidsScreen() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
-
+const walletBalance=localStorage.getItem("walletBalance");
   // Same actions as before — only layout changed
   const tiles = [
     {
@@ -120,11 +120,17 @@ export default function MyBidsScreen() {
 
   return (
     <div className="mainhome-screen-wrapper">
-      <Header walletCount={5} onMenuClick={() => setSidebarOpen(true)} />
+      {/* <Header walletCount={5} onMenuClick={() => setSidebarOpen(true)} />
 
       {isSidebarOpen && (
         <Sidebar isOpen={isSidebarOpen} onClose={() => setSidebarOpen(false)} />
-      )}
+      )} */}
+      <AppHeader
+              title="My Bids"
+               walletBalance={walletBalance}
+              onBack={() => navigate(-1)}
+              onWalletClick={() => navigate("/passbook")}
+            />
 
       {/* Same block layout as Funds screen */}
       <div className="funds-grid square">

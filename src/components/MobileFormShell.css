@@ -5,7 +5,7 @@
   --title: #ffffff;           /* hero title */
   --label: #263049;           /* "Confirm MPIN" text */
   --muted: #9aa3b3;
-  --sheet: #f2f2f2;
+  --sheet: #ffffff;
   --sheet-grad: radial-gradient(120% 80% at 52% 40%, #f6f7f9 0%, #eef1f6 55%, #e8ebf1 90%);
   --radius-big: 74px;
   --side: 22px;               /* horizontal padding for content */

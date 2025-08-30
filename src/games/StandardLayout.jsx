@@ -1,6 +1,6 @@
 import React from 'react';
 import AutocompleteInput from './AutoCompleteInput'; // Ensure this is imported
-
+import DateChip from '../components/DateChip';
 const StandardLayout = ({
   config,
   gameType,
@@ -21,6 +21,7 @@ const StandardLayout = ({
 
   return (
     <>
+      <DateChip/>
       {showSessionSelector && (
         <div className="input-row">
           <label>Select Game Type:</label>
@@ -31,7 +32,7 @@ const StandardLayout = ({
 </select>
         </div>
       )}
-
+   
       <div className="input-row">
         <label>{config.fields[0].label}</label>
 
@@ -67,7 +68,7 @@ const StandardLayout = ({
         />
       </div>
 
-      <button className="btn-add-bid" onClick={handleAddBid}>ADD BID</button>
+      <button className="btn-add-bid" onClick={handleAddBid}>+ ADD BID</button>
     </>
   );
 };

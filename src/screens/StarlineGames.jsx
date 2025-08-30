@@ -5,19 +5,17 @@ import { AppContext } from '../context/AppContext';
 import '../css/mainhome.css';
 import '../css/StarlineGames.css'; // We will create this CSS file next
 
+import AppHeader from '../components/AppHeader';
 
-
-const gradients = [
-  "linear-gradient(135deg, #ff9a9e, #fad0c4)",
-  "linear-gradient(135deg, #a18cd1, #fbc2eb)",
-  "linear-gradient(135deg, #f6d365, #fda085)",
-  "linear-gradient(135deg, #84fab0, #8fd3f4)",
-  "linear-gradient(135deg, #fccb90, #d57eeb)",
-  "linear-gradient(135deg, #ffecd2, #fcb69f)"
+const CARD_COLORS = [
+  "#f3dfd9", // peach
+  "#e9dcf8", // lavender
+  "#dcefe2", // mint
+  "#daeeee", // teal
+  "#dfe7f9", // blue
 ];
 
-const randomGradient = () => gradients[Math.floor(Math.random() * gradients.length)];
-
+const pickCardColor = (i) => CARD_COLORS[i % CARD_COLORS.length];
 
 
 
@@ -62,9 +60,9 @@ const StarlineGames = () => {
         );
 
         if (response.data?.status && Array.isArray(response.data.info)) {
-          const withGradients = response.data.info.map((g) => ({
+          const withGradients = response.data.info.map((g,i) => ({
             ...g,
-            gradient: randomGradient()
+            bg: pickCardColor(i),
           }));
           setGames(withGradients);
         } else {
@@ -92,20 +90,27 @@ const StarlineGames = () => {
   return (
     <div className="mainhome-screen-wrapper">
       <div className="st-games-container">
-        <div className="st-games-header">
+        {/* <div className="st-games-header">
           <button className="st-back-btn" onClick={() => navigate(-1)}>‹</button>
           <h2>{marketName}</h2>
           <div className="st-wallet">
             <span className="st-wallet-icon"></span>
             <span>{user?.walletBalance || '0'}</span>
           </div>
-        </div>
+        </div> */}
+         <AppHeader
+                              title={marketName}
+                               walletBalance={user?.walletBalance}
+                              onBack={() => navigate(-1)}
+                              onWalletClick={() => navigate("/passbook")}
+                            />
+                
 
         <div className="st-games-grid screen-content">
           {loading && <p className="st-message">Loading Games...</p>}
           {error && <p className="st-message error">{error}</p>}
           {!loading && !error && games.map((game) => (
-            <div key={game.id} className="st-game-card"  style={{ background: game.gradient }} onClick={() => handleGameClick(game)}>
+            <div key={game.id} className="st-game-card"  style={{ background: game.bg }} onClick={() => handleGameClick(game)}>
               <div className="st-game-icon-wrapper">
                 <img src={game.image} alt={game.name} />
               </div>

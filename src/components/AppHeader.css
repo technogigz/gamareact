@@ -1,0 +1,80 @@
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+   height:50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: calc(env(safe-area-inset-top, 0px) + 8px) 12px 10px;
+  background: linear-gradient(180deg, #ff5a1a 0%, #f84404 100%);
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  box-shadow: 0 6px 16px rgba(248, 68, 4, 0.2);
+}
+
+/* Back button */
+.back-bttn {
+  background: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+  cursor: pointer;
+   filter: brightness(0) invert(1);
+ 
+}
+
+.back-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* Title left-aligned */
+.headeer-title {
+  flex: 1;
+  margin: 0 10px;
+  text-align: left;
+  color: #fff;
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Wallet */
+.icon-btn.circle {
+  width: 40px;
+  height: 40px;
+  /* border-radius: 50%; */
+  /* background: #fff;
+  border: 1px solid #eee; */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); */
+  cursor: pointer;
+}
+
+.wallet-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+   filter: brightness(0) invert(1);
+}
+
+
+.wallet-count {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  min-width: 20px;
+  text-align: center;
+}

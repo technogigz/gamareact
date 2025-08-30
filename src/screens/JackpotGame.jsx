@@ -4,20 +4,18 @@ import axios from 'axios';
 import { AppContext } from '../context/AppContext';
 import '../css/mainhome.css';
 import '../css/StarlineGames.css'; // We will create this CSS file next
+import AppHeader from '../components/AppHeader';
 
-const getRandomGradient = () => {
-  const reddishGradients = [
-    "linear-gradient(135deg, #ff9a9e, #fad0c4)",
-    "linear-gradient(135deg, #ffdde1, #ee9ca7)",
-    "linear-gradient(135deg, #fda085, #f6d365)",
-    "linear-gradient(135deg, #ff6a88, #ff99ac)",
-    "linear-gradient(135deg, #fbc2eb, #a18cd1)",
-    "linear-gradient(135deg, #f9d423, #ff4e50)",
-    "linear-gradient(135deg, #ffecd2, #fcb69f)",
-    "linear-gradient(135deg, #f8cdda, #1d2b64)",
-  ];
-  return reddishGradients[Math.floor(Math.random() * reddishGradients.length)];
-};
+
+const CARD_COLORS = [
+  "#f3dfd9", // peach
+  "#e9dcf8", // lavender
+  "#dcefe2", // mint
+  "#daeeee", // teal
+  "#dfe7f9", // blue
+];
+
+const pickCardColor = (i) => CARD_COLORS[i % CARD_COLORS.length];
 
 
 const JackpotGames = () => {
@@ -61,9 +59,9 @@ const JackpotGames = () => {
         );
 
         if (response.data?.status && Array.isArray(response.data.info)) {
-           const gamesWithColors = response.data.info.map(game => ({
+           const gamesWithColors = response.data.info.map((game,i) => ({
             ...game,
-            gradient: getRandomGradient()
+           bg: pickCardColor(i),
           }));
           setGames(gamesWithColors);
         } else {
@@ -79,7 +77,7 @@ const JackpotGames = () => {
 
     fetchJackpotGameTypes();
   }, [user]); // Re-fetch if user changes
-
+//const walletBalance=localStorage.getItem("walletBalance");
   const handleGameClick = (game) => {
     // Navigate to our main BidGames screen, passing both the marketId and the gameType
     // The 'game.type' (e.g., "singleDigits") must match a key in your gameConfigs.js file
@@ -91,20 +89,27 @@ const JackpotGames = () => {
   return (
     <div className="mainhome-screen-wrapper">
       <div className="st-games-container">
-        <div className="st-games-header">
+        {/* <div className="st-games-header">
           <button className="st-back-btn" onClick={() => navigate(-1)}>‹</button>
           <h2>{marketName}</h2>
           <div className="st-wallet">
             <span className="st-wallet-icon"></span>
             <span>{user?.walletBalance || '0'}</span>
           </div>
-        </div>
+        </div> */}
+         <AppHeader
+                      title={marketName}
+                       walletBalance={user?.walletBalance}
+                      onBack={() => navigate(-1)}
+                      onWalletClick={() => navigate("/passbook")}
+                    />
+        
 
         <div className="st-games-grid screen-content">
           {loading && <p className="st-message">Loading Games...</p>}
           {error && <p className="st-message error">{error}</p>}
           {!loading && !error && games.map((game) => (
-            <div key={game.id} className="st-game-card" style={{ background: game.gradient }} onClick={() => handleGameClick(game)}>
+            <div key={game.id} className="st-game-card" style={{ background: game.bg }} onClick={() => handleGameClick(game)}>
               <div className="st-game-icon-wrapper">
                 <img src={game.image} alt={game.name} />
               </div>

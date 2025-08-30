@@ -67,10 +67,10 @@ import axios from "axios";
 import "../css/PassbookScreen.css";
 import "../css/mainhome.css";
 import arrowDownIcon from "../assets/icons/down.png";
-
+import AppHeader from "../components/AppHeader";
 export default function PassbookScreen() {
   const navigate = useNavigate();
-
+const walletBalance=localStorage.getItem("walletBalance")
   const [entries, setEntries] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
   const [page, setPage] = useState(1);
@@ -123,10 +123,17 @@ export default function PassbookScreen() {
   return (
     <div className="mainhome-screen-wrapper">
       {/* Header */}
-      <div className="passbook-header">
+      {/* <div className="passbook-header">
         <button className="back-btn" onClick={() => navigate(-1)}>&larr;</button>
         <h1>Passbook</h1>
-      </div>
+      </div> */}
+
+       <AppHeader
+                                            title="PASSBOOK"
+                                             walletBalance={walletBalance}
+                                            onBack={() => navigate(-1)}
+                                            onWalletClick={() => navigate("/passbook")}
+                                          />
 
       {/* Table */}
       <div className="table-scroll">

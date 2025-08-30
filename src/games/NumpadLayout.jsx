@@ -1,10 +1,11 @@
 import React from 'react';
 import Numpad from './Numpad';
-
+import DateChip from '../components/DateChip';
 const NumpadLayout = ({ config, points, setPoints, handleNumpadBid, bids, selectedGameType, setSelectedGameType,openBidDisabled, }) => (
   <>
     <div className="input-row">
-      <label>Select Game Type:</label>
+        <DateChip/>
+      {/* <label>Select Game Type:</label> */}
        <select value={selectedGameType} onChange={(e) => setSelectedGameType(e.target.value)}>
         
         {/* <<<< 2. OPTION IS CONDITIONALLY RENDERED >>>> */}

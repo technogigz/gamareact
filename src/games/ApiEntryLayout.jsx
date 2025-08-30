@@ -1,5 +1,5 @@
 import React from 'react';
-
+import DateChip from '../components/DateChip';
 const ApiEntryLayout = ({
   config,
   digit,
@@ -14,6 +14,7 @@ const ApiEntryLayout = ({
   openBidDisabled,
 }) => (
   <>
+    <DateChip/>
   {showSessionSelector&&(
     <div className="input-row">
       <label>Select Game Type:</label>

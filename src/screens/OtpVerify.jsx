@@ -64,7 +64,14 @@ const OtpVerify = () => {
         mobileNo,
         otp: parseInt(otp),
         security_pin: parseInt(userPin),
-      });
+      }, {headers: {
+            "Content-Type": "application/json",
+          
+            deviceId: "qwert",
+            deviceName: "sm2233",
+            accessStatus: "1",
+          }});
+      console.log(registerRes);
 
       if (registerRes.data.status === true) {
          const { accessToken, registerId } = registerRes.data.info;
@@ -79,7 +86,7 @@ const OtpVerify = () => {
 
          if (profileRes.data.status === true && profileRes.data.info) {
           const userInfo = profileRes.data.info;
-   
+   console.log(profileRes);
              localStorage.setItem('userProfile', JSON.stringify(userInfo));
           localStorage.setItem('walletBalance', userInfo.walletBalance);
           setUser(userInfo); // Update the global context

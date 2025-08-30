@@ -163,14 +163,27 @@
 .funds-grid.square{
   align-content: start;   /* ⬅️ key line */
   justify-content: start; /* keep left-aligned */
-  gap: 18px;              /* tighter spacing (optional) */
+  gap: 18px; 
+  padding:40px             /* tighter spacing (optional) */
 }
 
 /* keep tiles perfectly square (from earlier step) */
 .funds-grid.square .funds-tile{
   aspect-ratio: 1 / 1;
   min-height: 0;
-  padding: 18px 12px 26px;
+  padding: 14px 10px 18px;
   justify-content: center;
 }
 
+
+
+.funds-grid.square .tile-icon-wrap {
+  width: clamp(30px, 10vw, 50px);
+  height: clamp(30px, 10vw, 50px);
+}
+
+
+/* .funds-grid.square .tile-icon-wrap img {
+  width: 18px;
+  height: 18px;
+} */

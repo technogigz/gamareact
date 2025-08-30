@@ -1,7 +1,7 @@
 // In src/components/BracketGeneratorLayout.jsx
 
 import React from 'react';
-
+import DateChip from '../components/DateChip';
 const BracketGeneratorLayout = ({
   bracketType,
   setBracketType,
@@ -12,6 +12,7 @@ const BracketGeneratorLayout = ({
 }) => {
   return (
     <>
+      <DateChip/>
       <div className="input-row">
         <label>Select Bracket Type:</label>
         <div className="radio-group">

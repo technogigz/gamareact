@@ -5,7 +5,7 @@
   align-items: center;
   padding: 12px 16px;
   background: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
+  /* border-bottom: 1px solid #e0e0e0; */
 }
 
 /* Left side container */
@@ -16,7 +16,7 @@
 }
 
 .logo {
-  height: 30px; /* Adjust logo height as needed */
+  height: 43px; /* Adjust logo height as needed */
 }
 
 /* Right side container */
@@ -65,4 +65,60 @@
 }
 .icon-wallet { 
   background-image: url("../assets/icons/wallet_figma1.svg");
+}
+
+
+
+
+.burger { 
+  background-image: url("../assets/icons/icons8-hamburger-menu.svg");
+}
+/* Pill-shaped button wrapper */
+.menu-pill {
+  --pill-bg: #fff;
+  --pill-border: #ddd;
+  --accent: #f84404;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 18px;
+  border-radius: 0 999px 999px 0;   /* flat left, round right */
+  background: var(--pill-bg);
+  border: 1px solid var(--pill-border);
+  border-left: none;                /* no border on the screen edge */
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08); /* subtle right shadow */
+  cursor: pointer;
+      margin-left: -17px;
+}
+
+/* 3-line hamburger inside */
+.burger {
+  position: relative;
+  width: 18px;
+  height: 2px;
+  background: var(--accent);    /* middle line */
+  border-radius: 2px;
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.burger::before { transform: translateY(-6px); } /* top */
+.burger::after  { transform: translateY(6px); }  /* bottom */
+
+
+.menu-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }

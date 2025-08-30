@@ -211,6 +211,7 @@ import BottomNav from '../components/BottomNav';
 import Sidebar from '../components/SideBar';
 import PaymentOptionsModal from '../components/PaymentOptionsModal';
 import { toast } from 'react-toastify';
+import AppHeader from '../components/AppHeader';
 
 const AddFundsScreen = () => {
   const { user, refetchUser } = useContext(AppContext);
@@ -426,9 +427,14 @@ const AddFundsScreen = () => {
 
   return (
     <div className="mainhome-screen-wrapper">
-      <Header onMenuClick={() => setIsSidebarOpen(true)} />
-      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
-
+      {/* <Header onMenuClick={() => setIsSidebarOpen(true)} />
+      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} /> */}
+ <AppHeader
+                                      title="ADD FUNDS"
+                                       walletBalance={user?.walletBalance}
+                                      onBack={() => navigate(-1)}
+                                      onWalletClick={() => navigate("/passbook")}
+                                    />
       <div className="funds-container">
         <div className="funds-content-top">
           <div className="funds-balance-card">
