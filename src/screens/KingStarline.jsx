@@ -295,7 +295,7 @@ import "../css/KingJackpot.css"; // (keep if other shared styles exist)
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import StarlineClosedModal from "../components/starlineclosedmodal";
-
+import playIcon from "../assets/icons/play.png";
 const KingStarlineDashboard = () => {
   const navigate = useNavigate();
   const [games, setGames] = useState([]);
@@ -423,7 +423,7 @@ const KingStarlineDashboard = () => {
                     }}
                     aria-label="Play Game"
                   >
-                    ▶
+                      <img src={playIcon} alt="" />
                   </button>
                   <div className="ksd-cap">Play Game</div>
                 </div>

@@ -44,7 +44,7 @@
 
 .sl-modal-gamename {
   font-size: 1.25rem;
-  font-weight: bold;
+  font-weight: 500;
   color: #333;
   margin: 0 0 1rem 0;
 }
@@ -81,7 +81,9 @@
   border-radius: 8px;
   font-weight: 700;
   font-size: 1rem;
-  color: #333;
-  background-color: #fa5514; /* Yellow/Orange */
+  color: #fff;
+  background-color: #ff2600; /* Yellow/Orange */
   cursor: pointer;
+  border-radius: 50px;
+  
 }
