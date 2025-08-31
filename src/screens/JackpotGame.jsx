@@ -6,16 +6,21 @@ import '../css/mainhome.css';
 import '../css/StarlineGames.css'; // We will create this CSS file next
 import AppHeader from '../components/AppHeader';
 
-
-const CARD_COLORS = [
-  "#f3dfd9", // peach
-  "#e9dcf8", // lavender
-  "#dcefe2", // mint
-  "#daeeee", // teal
-  "#dfe7f9", // blue
+const CARD_THEMES = [
+  { bg:"#f3ccc0ff", chip:"#f9e6e0", accent:"#f84404",
+    iconFilter:"brightness(0) saturate(100%) invert(32%) sepia(95%) saturate(1200%) hue-rotate(5deg) brightness(95%) contrast(110%)" },
+  { bg:"#bdcdf8ff", chip:"#eaf0fd", accent:"#1d4ed8",
+    iconFilter:"brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(2593%) hue-rotate(212deg) brightness(92%) contrast(100%)" },
+  { bg:"#e1bdf5ff", chip:"#f6ebff", accent:"#8b5cf6",
+    iconFilter:"brightness(0) saturate(100%) invert(16%) sepia(97%) saturate(4914%) hue-rotate(267deg) brightness(82%) contrast(104%)" },
+  { bg:"#d3f5e4ff", chip:"#e9f8f0", accent:"#16a34a",
+    iconFilter:"brightness(0) saturate(100%) invert(42%) sepia(86%) saturate(426%) hue-rotate(89deg) brightness(96%) contrast(87%)" },
+  { bg:"#c7f1f1ff", chip:"#e9f7f7", accent:"#0ea5a7",
+    iconFilter:"brightness(0) saturate(100%) invert(38%) sepia(43%) saturate(781%) hue-rotate(136deg) brightness(93%) contrast(86%)" },
 ];
 
-const pickCardColor = (i) => CARD_COLORS[i % CARD_COLORS.length];
+const pickTheme = (i) => CARD_THEMES[i % CARD_THEMES.length];
+
 
 
 const JackpotGames = () => {
@@ -59,11 +64,14 @@ const JackpotGames = () => {
         );
 
         if (response.data?.status && Array.isArray(response.data.info)) {
-           const gamesWithColors = response.data.info.map((game,i) => ({
-            ...game,
-           bg: pickCardColor(i),
-          }));
-          setGames(gamesWithColors);
+            const themed = response.data.info.map((g, i) => {
+    const t = pickTheme(i);
+    return {
+      ...g,
+      theme: t,
+    };
+  });
+  setGames(themed);
         } else {
           throw new Error(response.data.msg || "Failed to fetch game types.");
         }
@@ -89,27 +97,30 @@ const JackpotGames = () => {
   return (
     <div className="mainhome-screen-wrapper">
       <div className="st-games-container">
-        {/* <div className="st-games-header">
+        <div className="st-games-header">
           <button className="st-back-btn" onClick={() => navigate(-1)}>‹</button>
-          <h2>{marketName}</h2>
-          <div className="st-wallet">
+          <h2>DASHBOARD</h2>
+          {/* <div className="st-wallet">
             <span className="st-wallet-icon"></span>
             <span>{user?.walletBalance || '0'}</span>
-          </div>
-        </div> */}
-         <AppHeader
+          </div> */}
+        </div>
+         {/* <AppHeader
                       title={marketName}
                        walletBalance={user?.walletBalance}
                       onBack={() => navigate(-1)}
                       onWalletClick={() => navigate("/passbook")}
                     />
-        
+         */}
 
         <div className="st-games-grid screen-content">
           {loading && <p className="st-message">Loading Games...</p>}
           {error && <p className="st-message error">{error}</p>}
           {!loading && !error && games.map((game) => (
-            <div key={game.id} className="st-game-card" style={{ background: game.bg }} onClick={() => handleGameClick(game)}>
+            <div key={game.id} className="st-game-card" style={{  "--bg": game.theme.bg,
+    "--chip": game.theme.chip,
+    "--accent": game.theme.accent,
+    "--icon-filter": game.theme.iconFilter, }} onClick={() => handleGameClick(game)}>
               <div className="st-game-icon-wrapper">
                 <img src={game.image} alt={game.name} />
               </div>

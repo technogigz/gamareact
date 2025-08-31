@@ -8,11 +8,14 @@
 .st-games-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+ justify-content: flex-start; 
+   gap: 12px; 
   padding: 1rem;
-  background-color: #fff;
+  background-color: #fc4e22;
   border-bottom: 1px solid #e0e0e0;
   flex-shrink: 0;
+  color:#fff;
+  border-radius:0px 0px 20px 20px
 }
 
 .st-back-btn {
@@ -22,14 +25,15 @@
   cursor: pointer;
   padding: 0;
   line-height: 1;
+  color: #fff;   
 }
 
 .st-games-header h2 {
   font-size: 1.1rem;
   font-weight: 600;
   margin: 0;
-  flex-grow: 1;
-  text-align: center;
+  flex-grow: 0;
+  text-align: left;
 }
 
 .st-wallet {
@@ -87,7 +91,7 @@
   width: 70%;
   height: 70%;
   object-fit: contain;
-  filter: drop-shadow(0 0 3px rgba(0,0,0,0.25));
+  filter: var(--icon-filter, none);  
 }
 .st-game-card p {
   margin: 0;
@@ -104,4 +108,90 @@
 
 .st-message.error {
   color: #c62828;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* grid remains the same */
+.st-games-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Card uses CSS vars from inline style */
+.st-game-card {
+  position: relative;
+  background: var(--bg, #fff);
+  border-radius: 18px;
+  padding: 14px 12px 24px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.st-game-card:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0,0,0,0.08); }
+
+/* Accent bar at the bottom */
+.st-game-card::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 6px;
+  border-radius: 6px;
+  background: var(--accent, #f84404);
+}
+
+/* Icon chip */
+.st-game-icon-wrapper {
+  background: var(--chip, #f8f9fa);
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px auto 8px;
+}
+
+/* Masked icon: color comes from --accent */
+.st-game-icon {
+  display: block;  
+  width: 28px;
+  height: 28px;
+  background: var(--accent, #f84404);
+
+  /* Standard */
+  mask-image: var(--icon-url);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  /* WebKit (needed for Chrome/Safari/most Android browsers) */
+  -webkit-mask-image: var(--icon-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+
+/* Title */
+.st-game-card p {
+  margin: 6px 0 0;
+  font-weight: 600;
+  color: #222;
 }
