@@ -9,16 +9,16 @@ import iconBank from "../assets/icons/ac_icon.svg";
 import "../css/AddBankDetails.css";
 import "../css/mainhome.css";
 import { toast } from "react-toastify";
-
+import AppHeader from "../components/AppHeader";
 export default function AddBankDetailsScreen() {
-  const nav = useNavigate();
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     holder: "",
     accNo: "",
     ifsc: "",
     bank: ""
   });
-
+const walletBalance=localStorage.getItem("walletBalance");
   const onChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -54,7 +54,7 @@ export default function AddBankDetailsScreen() {
         if (res.data.status === true) {
           //  alert("Bank details added successfully!");
             toast.success('Bank details added successfully.');
-             nav(-1);
+             navigate(-1);
              } else {
            alert(res.data.msg || "Failed to add bank details.");
         }
@@ -68,10 +68,16 @@ export default function AddBankDetailsScreen() {
     <div className="mainhome-screen-wrapper">
       <div className="add-bank-page">
         {/* top bar */}
-        <header className="add-bank-header">
+        {/* <header className="add-bank-header">
           <button className="back-btn" onClick={() => nav(-1)}>‹</button>
           <h3>Add Bank Details</h3>
-        </header>
+        </header> */}
+        <AppHeader
+                                              title="Add Bank Details"
+                                               walletBalance={walletBalance}
+                                              onBack={() => navigate(-1)}
+                                              onWalletClick={() => navigate("/passbook")}
+                                            />
 
         <div className="add-bank-body">
           {/* logo */}

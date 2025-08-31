@@ -46,6 +46,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+   min-width: 0; 
 }
 
 /* Wallet */
@@ -71,9 +72,29 @@
 
 
 .wallet-count {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
   color: #ffffff;
-  min-width: 20px;
-  text-align: center;
+  /* min-width: 20px; */
+  /* text-align: center; */
+    white-space: nowrap;
+}
+
+.wallet-section {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0; 
+}
+
+
+.wallet-btn {
+  background: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+  cursor: pointer;
 }

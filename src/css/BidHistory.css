@@ -12,7 +12,7 @@ display: flex;
   padding: 16px;
   position: sticky;
   top: 0;
-  background: white;
+  background: rgb(245, 85, 12);
   border-bottom: 1px solid #ddd;
   z-index: 10;
 }
@@ -24,6 +24,7 @@ display: flex;
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
+  color:#fff
 }
 
 .bid-header h3 {
@@ -36,7 +37,7 @@ display: flex;
 
 .bid-header span {
   font-size: 14px;
-  color: #444;
+  color: #ffffff;
 }
 
 .bid-list {
@@ -127,13 +128,16 @@ display: flex;
 
 
 .bid-header {
+  color:#fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px;
   position: relative;
-  background: white;
+  background: rgb(252, 82, 15);
   border-bottom: 1px solid #ddd;
+  border-radius:0px 0px 20px 20px;
+  font: #fff;
 }
 
 .bid-header h3 {

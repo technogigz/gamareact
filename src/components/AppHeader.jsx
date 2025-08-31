@@ -19,14 +19,17 @@ export default function AppHeader({ title = "", onBack, onWalletClick , walletBa
       <h1 className="headeer-title">{title}</h1>
 
       {/* RIGHT: wallet */}
+      <div className="wallet-section">
       <button
-        className="icon-btn circle"
+        className="wallet-btn"
         onClick={onWalletClick}
         aria-label="Wallet"
       >
         <img src={walletIcon} alt="Wallet" className="wallet-icon" />
-         <span className="wallet-count">{walletBalance}</span>
+         
       </button>
+      <span className="wallet-count">{walletBalance}</span>
+      </div>
     </header>
   );
 }

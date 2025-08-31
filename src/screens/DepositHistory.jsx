@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css/DepositHistory.css";
 import "../css/mainhome.css";
-
+import AppHeader from "../components/AppHeader";
 export default function DepositHistoryScreen() {
-  const nav = useNavigate();
+  const navigate = useNavigate();
   const [deposits, setDeposits] = useState([]);
   const [loading, setLoading] = useState(true);
-
+const walletBalance= localStorage.getItem("walletBalance");
   const fetchDeposits = async () => {
     try {
       const token = localStorage.getItem("accessToken");
@@ -65,10 +65,16 @@ export default function DepositHistoryScreen() {
     <div className="mainhome-screen-wrapper">
       <div className="history-page">
         {/* header */}
-        <header className="history-header">
+        {/* <header className="history-header">
           <button className="back-btn" onClick={() => nav(-1)}>‹</button>
           <h2>Fund Deposit History</h2>
-        </header>
+        </header> */}
+        <AppHeader
+                                              title="Fund Deposit History"
+                                               walletBalance={walletBalance}
+                                              onBack={() => navigate(-1)}
+                                              onWalletClick={() => navigate("/passbook")}
+                                            />
 
         {/* body */}
         <div className="history-body">

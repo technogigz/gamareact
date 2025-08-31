@@ -64,7 +64,7 @@
 .input-icon {
   width: 48px;
   height: 48px;
-  background: #e4dac8;
+  background: #ecac8f;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -75,6 +75,8 @@
 .input-icon img {
   width: 20px;
   height: 20px;
+    filter: brightness(0) invert(32%) sepia(97%) saturate(3700%) hue-rotate(2deg) brightness(98%) contrast(101%);
+
 }
 
 .input-wrap input {
