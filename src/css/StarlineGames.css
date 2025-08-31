@@ -54,8 +54,8 @@
 .st-games-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 2rem;
+  padding: 2rem;
 }
 
 .st-game-card {
@@ -95,7 +95,7 @@
 }
 .st-game-card p {
   margin: 0;
-  font-weight: 500;
+  font-weight: 100;
   color: #333;
 }
 
@@ -126,8 +126,8 @@
 .st-games-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 1.5rem;
+  padding: 2.5rem;
 }
 
 /* Card uses CSS vars from inline style */
@@ -148,7 +148,7 @@
   content: "";
   position: absolute;
   left: 50%;
-  bottom: 10px;
+  bottom: 0px;
   transform: translateX(-50%);
   width: 36px;
   height: 6px;
@@ -192,6 +192,6 @@
 /* Title */
 .st-game-card p {
   margin: 6px 0 0;
-  font-weight: 600;
+  font-weight: 500;
   color: #222;
 }

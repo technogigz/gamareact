@@ -7,15 +7,15 @@ import '../css/StarlineGames.css'; // We will create this CSS file next
 import AppHeader from '../components/AppHeader';
 
 const CARD_THEMES = [
-  { bg:"#f3ccc0ff", chip:"#f9e6e0", accent:"#f84404",
+  { bg:"#f3ccc0ff", chip:"#ff9b7dff", accent:"#f84404",
     iconFilter:"brightness(0) saturate(100%) invert(32%) sepia(95%) saturate(1200%) hue-rotate(5deg) brightness(95%) contrast(110%)" },
-  { bg:"#bdcdf8ff", chip:"#eaf0fd", accent:"#1d4ed8",
+  { bg:"#bdcdf8ff", chip:"#7ca4faff", accent:"#1d4ed8",
     iconFilter:"brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(2593%) hue-rotate(212deg) brightness(92%) contrast(100%)" },
-  { bg:"#e1bdf5ff", chip:"#f6ebff", accent:"#8b5cf6",
+  { bg:"#e1bdf5ff", chip:"#cc8cfdff", accent:"#8b5cf6",
     iconFilter:"brightness(0) saturate(100%) invert(16%) sepia(97%) saturate(4914%) hue-rotate(267deg) brightness(82%) contrast(104%)" },
-  { bg:"#d3f5e4ff", chip:"#e9f8f0", accent:"#16a34a",
+  { bg:"#d3f5e4ff", chip:"#93ffc5ff", accent:"#16a34a",
     iconFilter:"brightness(0) saturate(100%) invert(42%) sepia(86%) saturate(426%) hue-rotate(89deg) brightness(96%) contrast(87%)" },
-  { bg:"#c7f1f1ff", chip:"#e9f7f7", accent:"#0ea5a7",
+  { bg:"#c7f1f1ff", chip:"#7ff8f8ff", accent:"#0ea5a7",
     iconFilter:"brightness(0) saturate(100%) invert(38%) sepia(43%) saturate(781%) hue-rotate(136deg) brightness(93%) contrast(86%)" },
 ];
 

@@ -68,7 +68,7 @@
 /* Single Digits */
 .tone-peach{
   --tile-bg:#efd9d2;
-  --icon-bg:#ff6b005e;
+  --icon-bg:#fa98515e;
   --accent:#ff6b00;
   --icon-filter: brightness(0) saturate(100%) invert(58%) sepia(82%) saturate(4805%) hue-rotate(343deg) brightness(102%) contrast(96%);
 }
@@ -76,7 +76,7 @@
 /* Single Digit Bulk */
 .tone-sand{
   --tile-bg:#efe5c9;
-  --icon-bg:#f6eed4;
+  --icon-bg:#f3d881;
   --accent:#d6b000;
   --icon-filter: brightness(0) saturate(100%) invert(69%) sepia(64%) saturate(523%) hue-rotate(2deg) brightness(100%) contrast(89%);
 }
@@ -84,7 +84,7 @@
 /* Jodi Digit */
 .tone-blue{
   --tile-bg:#dbe7fb;
-  --icon-bg:#e9f1ff;
+  --icon-bg:#689fff;
   --accent:#1e40af;
   --icon-filter: brightness(0) saturate(100%) invert(20%) sepia(96%) saturate(1616%) hue-rotate(205deg) brightness(95%) contrast(104%);
 }
@@ -92,7 +92,7 @@
 /* Jodi Digit Bulk */
 .tone-teal{
   --tile-bg:#d8eef0;
-  --icon-bg:#e7f7f8;
+  --icon-bg:#75eff8;
   --accent:#0ea5a7;
   --icon-filter: brightness(0) saturate(100%) invert(38%) sepia(43%) saturate(781%) hue-rotate(136deg) brightness(93%) contrast(86%);
 }
@@ -100,7 +100,7 @@
 /* Single Pana */
 .tone-purple{
   --tile-bg:#e9dcf8;
-  --icon-bg:#f1e6fb;
+  --icon-bg:#c98fff;
   --accent:#6a28b8;
   --icon-filter: brightness(0) saturate(100%) invert(16%) sepia(97%) saturate(4914%) hue-rotate(267deg) brightness(82%) contrast(104%);
 }
@@ -108,7 +108,7 @@
 /* Single Pana Bulk */
 .tone-pink{
   --tile-bg:#f1d7e3;
-  --icon-bg:#f9e3ec;
+  --icon-bg:#ff97c3;
   --accent:#db2777;
   --icon-filter: brightness(0) saturate(100%) invert(28%) sepia(81%) saturate(1593%) hue-rotate(309deg) brightness(94%) contrast(98%);
 }
@@ -116,7 +116,7 @@
 /* Double Pana */
 .tone-green{
   --tile-bg:#ddefd9;
-  --icon-bg:#e8f6e2;
+  --icon-bg:#a6fd81;
   --accent:#16a34a;
   --icon-filter: brightness(0) saturate(100%) invert(38%) sepia(98%) saturate(461%) hue-rotate(93deg) brightness(93%) contrast(89%);
 }
@@ -124,7 +124,7 @@
 /* Double Pana Bulk */
 .tone-orange{
   --tile-bg:#f3ddd4;
-  --icon-bg:#fbe5db;
+  --icon-bg:#faa780;
   --accent:#f97316;
   --icon-filter: brightness(0) saturate(100%) invert(40%) sepia(94%) saturate(1186%) hue-rotate(2deg) brightness(102%) contrast(96%);
 }
@@ -132,7 +132,7 @@
 /* SP Motor */
 .tone-aqua{
   --tile-bg:#d7edf3;
-  --icon-bg:#e6f6fb;
+  --icon-bg:#61d8fc;
   --accent:#0ea5c0;
   --icon-filter: brightness(0) saturate(100%) invert(38%) sepia(61%) saturate(740%) hue-rotate(153deg) brightness(94%) contrast(90%);
 }
@@ -140,7 +140,7 @@
 /* DP Motor */
 .tone-magenta{
   --tile-bg:#f0d7ef;
-  --icon-bg:#f6e2f5;
+  --icon-bg:#f56eee;
   --accent:#c026d3;
   --icon-filter: brightness(0) saturate(100%) invert(13%) sepia(88%) saturate(3862%) hue-rotate(282deg) brightness(94%) contrast(102%);
 }
