@@ -310,7 +310,7 @@ export default function FundsScreen() {
       icon: funhiss,
       title: "Account Statement",
       tone: "green",
-      onClick: handleWithdrawClick,
+        onClick: () => navigate("/passbook"),
     },
   ];
 
