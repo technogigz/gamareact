@@ -154,7 +154,7 @@
 }
 
 /* ─── icon mappings ─── */
-.icon-home      { background-image: url("../assets/icons/home_nav1.svg"); }
+.icon-home      { background-image: url("../assets/icons/home.png"); }
 .icon-hammer    { background-image: url("../assets/icons/bid_nav.svg"); }
 .icon-lock      { background-image: url("../assets/icons/mpin_nav1.svg"); }
 .icon-doc       { background-image: url("../assets/icons/passbook1.svg"); }
