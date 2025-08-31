@@ -81,11 +81,12 @@ const walletBalance=localStorage.getItem("walletBalance");
 
         <div className="add-bank-body">
           {/* logo */}
-          <div className="brand-circle">
+          {/* <div className="brand-circle">
             <img src={logoWallet} alt="Sara777" />
-          </div>
+          </div> */}
 
           {/* form */}
+          <h2 className="add-bank-title" >Bank Details</h2>
           <form
             className="bank-form"
             onSubmit={(e) => {
@@ -94,40 +95,42 @@ const walletBalance=localStorage.getItem("walletBalance");
             }}
           >
             <Input
-              icon={iconUser}
+              // icon={iconUser}
               name="holder"
               placeholder="Account Holder Name"
               value={form.holder}
               onChange={onChange}
             />
             <Input
-              icon={iconCard}
+              //icon={iconCard}
               name="accNo"
               placeholder="Account Number"
               value={form.accNo}
               onChange={onChange}
             />
+           
             <Input
-              icon={iconIfsc}
-              name="ifsc"
-              placeholder="IFSC CODE"
-              value={form.ifsc}
-              onChange={onChange}
-            />
-            <Input
-              icon={iconBank}
+             // icon={iconBank}
               name="bank"
               placeholder="Bank Name"
               value={form.bank}
               onChange={onChange}
             />
-            {/* <Input
-              icon={iconBank}
+             <Input
+              // icon={iconBank}
               name="branch"
               placeholder="Branch Name"
               value={form.branch}
               onChange={onChange}
-            /> */}
+            />
+             <Input
+             // icon={iconIfsc}
+              name="ifsc"
+              placeholder="IFSC CODE"
+              value={form.ifsc}
+              onChange={onChange}
+            />
+           
 
            <button type="submit" className="save-btn">SAVE</button>
           </form>
