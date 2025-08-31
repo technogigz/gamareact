@@ -439,7 +439,7 @@ const AddFundsScreen = () => {
         <div className="funds-content-top">
           <div className="funds-balance-card">
             <div className="funds-card-top">
-              <span className="funds-card-brand">SARA777</span>
+              <span className="funds-card-brand">Gama567</span>
               <div className="funds-card-logo"></div>
             </div>
             <div className="funds-card-bottom">

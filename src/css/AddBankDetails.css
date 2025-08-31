@@ -12,9 +12,10 @@
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  background: #d8d7dc;
+  background: #ff2600;
   font-size: 16px;
   font-weight: 700;
+  color: #fff;
 }
 
 .back-btn {
