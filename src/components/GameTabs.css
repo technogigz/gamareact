@@ -1,16 +1,17 @@
 /* src/components/GameTabs.css */
 
 .game-tabs-wrapper {
-  display: flex;
-  gap: 10px;
-  padding: 12px 7px 28px;
-  justify-content: space-between;
-  background: #fff; /* ← match header bg */
-  overflow-x: auto;
-
-  border-radius: 0 0 20px 20px;     /* only bottom corners rounded */
-  box-shadow: 0 4px 12px rgba(248, 68, 4, 0.12); /* soft orange glow */
-  border-bottom: 5px solid #f8550a; 
+    display: flex;
+    gap: 10px;
+    padding: 12px 7px 36px;
+    justify-content: space-between;
+    background: #fff;
+    overflow-x: auto;
+    margin-bottom: 10px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 12px rgba(248, 68, 4, 0.12);
+    box-shadow: -1px 8px 5px -1px rgba(248, 85, 10, 0.75);
+    -webkit-box-shadow: 0px 4px 5px -1px rgba(248, 85, 10, 0.75);
 }
 
 .game-tabs-wrapper::-webkit-scrollbar {
@@ -22,7 +23,7 @@
 
 /* Style for when the game is closed */
 .game-status.closed {
-  color: #f84404; /* Red color */
+  color: #ff2600; /* Red color */
 }
 
 .game-tab {
@@ -31,28 +32,28 @@
   gap: 8px;
   padding: 19px 18px;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   cursor: pointer;
   justify-content: center;
   white-space: nowrap;
-  font-family: "Poppins", sans-serif !important;
+    font-family: "Montserrat", sans-serif !important;
   width: 50%;
   position: relative;
 }
 
 .game-tab.bgchanges{
 
-   background: #f84404; /* Changed from #ffb81c to a reddish color (Crimson) */
-   border: 1px solid #f84404;
+   background: #ff2600; /* Changed from #ffb81c to a reddish color (Crimson) */
+   border: 1px solid #ff2600;
    color: #fff;
 }
 
 .game-tab.bgchangeg2{
 
   background-color: transparent;
-  border: 1px solid #f84404;
-  color: #f84404;
+  border: 2px solid #ff2600;
+  color: #ff2600;
 }
 
 .btn_playebg{
@@ -60,21 +61,22 @@
   padding: 6px 25px;
   border-radius: 8px;
   text-align: center;
+   font-family: "Montserrat", sans-serif;
 
 }
 
 .btn_playebg.bgred{
 
-  background-color: #f84404;
+  background-color: #ff2600;
   color: #fff;
-  border: 0;
+  border: 2px solid #ff2600;
 }
 
 .btn_playebg.bgrednone{
 
   background-color: #fff;
-  border: 1px solid #f84404;
-  color: #f84404;
+  border: 2px solid #ff2600;
+  color: #ff2600;
 }
 .playbts{
 

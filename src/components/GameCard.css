@@ -118,11 +118,11 @@
 
 /* General Card Styling */
 .game-card {
-  background: #fff;
+  /* background: #fff; */
   border-radius: 8px;
   padding: 16px;
-  margin: 0 12px 12px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  margin: 0 12px 5px;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -133,14 +133,16 @@
 .card-left {
   display: flex;
   flex-direction: column;
+  flex: 5;
+  text-align: center;
   gap: 6px; /* Space between title, number, and status */
 }
 
 .game-title {
   margin: 0;
   font-size: 16px;
-  font-weight: 700;
-  color: #f84404; /* Red color from screenshot */
+  font-weight: 500;
+  color: #932701; /* Red color from screenshot */
   text-transform: uppercase;
 }
 
@@ -184,45 +186,66 @@
   font-family: inherit; /* Ensure button inherits font */
 }
 
-.icon-container {
+/* .icon-container {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #f84404; /* Red background for icons */
+  background-color: #ff2600; 
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.icon {
+/* .icon {
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 50%; /* Adjust size of icon inside the circle */
-}
+  background-size: 50%; 
+} */
 
 /* **IMPORTANT**: You need to provide your own SVG icons.
   Replace the placeholder URLs below with the correct paths to your assets.
   Using 'mask-image' is a modern way to color SVG icons directly with CSS.
 */
-.clock-icon {
-  background-color: white; /* This will be the color of the icon */
-  mask-image: url('../assets/icons/icons8-clock.svg');
-  -webkit-mask-image: url('../assets/icons/icons8-clock.svg');
+/* .clock-icon {
+  background-color: white; 
+  mask-image: url('../assets/icons/clock.png');
+  -webkit-mask-image: url('../assets/icons/clock.png');
+} */
+.icon.clock-icon img{
+
+width: 50px;
+height: 50px;
 }
 
-.play-icon {
-  background-color: white; /* This will be the color of the icon */
-  mask-image: url('../assets/icons/icons8-play-50.png');
-  -webkit-mask-image: url('../assets/icons/icons8-play-50.png');
+
+.icon-container.play{
+
+  width: 50px;
+  height: 50px;
+  background-color: #ff2600;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 3px 7px -1px rgba(248,85,10,0.76);
+-webkit-box-shadow: 0px 3px 7px -1px rgba(248,85,10,0.76);
+-moz-box-shadow: 0px 3px 7px -1px rgba(248,85,10,0.76);
+}
+
+
+.icon.play-icon img{
+
+width: 40px;
 }
 
 
 .action-button span {
   font-size: 12px;
-  color: #555;
-  font-weight: 500;
+  color: #333;
+  font-weight: 400;
 }
 
 /* Disabled state for the whole card */

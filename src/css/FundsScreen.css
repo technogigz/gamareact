@@ -138,15 +138,17 @@
 }
 
 .funds-grid.square .tile-title{
-  margin-top: 10px;
-  font-size: clamp(13px, 3.6vw, 15px);
+  margin-top: 15px;
+  font-size: clamp(13px, 3.6vw, 14px);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
 }
 
 .funds-grid.square .tile-accent{
-  width: 52%;
+  width: 45%;
   max-width: 82px;
   height: 6px;
-  bottom: 10px;
+  bottom: 0px;
 }
 
 
@@ -164,7 +166,7 @@
   align-content: start;   /* ⬅️ key line */
   justify-content: start; /* keep left-aligned */
   gap: 18px; 
-  padding:40px             /* tighter spacing (optional) */
+  padding:43px             /* tighter spacing (optional) */
 }
 
 /* keep tiles perfectly square (from earlier step) */
@@ -178,8 +180,9 @@
 
 
 .funds-grid.square .tile-icon-wrap {
-  width: clamp(30px, 10vw, 50px);
-  height: clamp(30px, 10vw, 50px);
+width: 65px;
+height: 65px;
+
 }
 
 

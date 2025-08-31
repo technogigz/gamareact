@@ -1,17 +1,16 @@
 .app-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-   height:50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: calc(env(safe-area-inset-top, 0px) + 8px) 12px 10px;
-  background: linear-gradient(180deg, #ff5a1a 0%, #f84404 100%);
-  border-bottom-left-radius: 22px;
-  border-bottom-right-radius: 22px;
-  box-shadow: 0 6px 16px rgba(248, 68, 4, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: calc(env(safe-area-inset-top, 7px) + 17px) 12px 13px;
+    background: linear-gradient(180deg, #ff2600 0%, #ff2600 100%);
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    box-shadow: 0 6px 16px rgba(248, 68, 4, 0.2);
 }
 
 /* Back button */

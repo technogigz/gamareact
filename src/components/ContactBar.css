@@ -5,7 +5,7 @@
   align-items: center;
   gap: 24px;  
   justify-content: space-between;              /* tighter spacing between contacts */
-  padding: 6px 16px;        /* reduced vertical padding */
+  padding: 10px 16px;        /* reduced vertical padding */
   background: #fff;      /* match header/ticker bg */
   font-size: 13px;          /* slightly smaller text */
            /* just a small gap from GameTabs */
@@ -18,7 +18,7 @@
   color: #333;
   text-decoration: none;
   font-weight: 500;   
-  font-size: 19px;      /* slightly lighter than bold */
+  font-size: 16px;      /* slightly lighter than bold */
 }
 
 .icon-wa {

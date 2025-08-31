@@ -79,6 +79,8 @@
 
 
 import "./GameCard.css";
+import clock from "../assets/icons/iconwhite.png";
+import playIcon from "../assets/icons/play.png";
 
 // You will need to import your icons. 
 // For example, if you have them as SVG files in an assets folder:
@@ -91,7 +93,8 @@ export default function GameCard({ title, number,closed ,isAccountActive, status
   
 
   return (
-    <div className={`game-card ${!isAccountActive ? 'disabled' : ''}`}>
+    <div>
+   <div className={`game-card ${!isAccountActive ? 'disabled' : ''}`}>
       <div className="card-left">
         <h3 className="game-title">{title}</h3>
         <p className="game-number">{number}</p>
@@ -102,9 +105,11 @@ export default function GameCard({ title, number,closed ,isAccountActive, status
 
       <div className="card-right">
         <div className="action-button">
-          <div className="icon-container">
+          <div className="icon-container play">
             {/* The icon would be a background image set in CSS */}
-            <div className="icon clock-icon"></div>
+            <div className="icon clock-icon">
+             <img src={clock} alt="" />
+            </div>
           </div>
           <span>Game time</span>
         </div>
@@ -112,14 +117,16 @@ export default function GameCard({ title, number,closed ,isAccountActive, status
         {/* The Play button is only shown if the account is active */}
         {isAccountActive && (
           <button className="action-button play-button">
-            <div className="icon-container">
+            <div className="icon-container play">
                {/* The icon would be a background image set in CSS */}
-              <div className="icon play-icon"></div>
+               <img src={playIcon} alt="" />
             </div>
             <span>Play Game</span>
           </button>
         )}
       </div>
     </div>
+    </div>
+ 
   );
 }

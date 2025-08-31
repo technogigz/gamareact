@@ -40,11 +40,11 @@
 
 .big-cross {
   font-size: 36px;
-  color: #f84404;
+  color: #ff2600;
 }
 
 .closed-text {
-  color: #f84404;
+  color: #ff2600;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -64,7 +64,7 @@
 .ok-btn {
   width: 100%;
   padding: 10px;
-  background: #f84404;
+  background: #ff2600;
   border: none;
   border-radius: 12px;
   font-weight: bold;

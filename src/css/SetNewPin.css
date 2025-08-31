@@ -23,7 +23,7 @@
 .accent-bar {
   width: 8px;
   height: 72px;
-  background: #f84404;          /* yellow */
+  background: #ff2600;          /* yellow */
   border-radius: 3px;
 }
 
@@ -62,7 +62,7 @@
 
 .text-input:focus{
 
-  border-color: #f84404;
+  border-color: #ff2600;
 }
 
 /* Yellow button */
@@ -97,7 +97,7 @@
 .resend-link {
   background: none;
   border: none;
-  color: #f84404;
+  color: #ff2600;
   font-weight: 600;
   margin: 24px auto 0;
   cursor: pointer;

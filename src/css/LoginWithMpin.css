@@ -33,28 +33,40 @@
 .mpin-input {
   width: 90%;
   padding: 15px;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   border: none;
   background-color: #ffffff;
   font-size: 16px;
   text-align: center;
+  outline: none;
+  border-bottom: 2px solid #000;
+}
+
+.mpin-input:focus{
+
+  border-color: #ff2600;
 }
 
 .mpin-login-btn {
-  width: 100%;
-  padding: 14px;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: #f84404;
+    width: 100%;
+  margin: 18px auto 8px;
+  display: block;
+  padding: 16px 24px;
   border: none;
-  border-radius: 10px;
-  color: #000;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  background: linear-gradient(180deg,var(--orange),var(--orange-700));
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 24px rgba(240,75,24,.35);
   cursor: pointer;
-  transition: background 0.3s;
+  transition: transform .08s ease, filter .2s ease;
+  margin-top: 20px;
 }
 
 .mpin-login-btn:hover {
-  background-color: #f84404;
+  background-color: #ff2600;
 }
 
 .mpin-forgot a {

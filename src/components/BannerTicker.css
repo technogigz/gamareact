@@ -11,9 +11,10 @@
 .ticker-text {
   white-space: nowrap;
   animation: scroll 10s linear infinite;
-  color: #d22;
+  color: #000;
   margin: 0;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 

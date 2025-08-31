@@ -1,7 +1,7 @@
 .open-game-container{
   background:#fff;
   min-height:100vh;
-  padding:16px;
+  padding:25px 45px;
   box-sizing:border-box;
   overflow-y:auto;
   -webkit-overflow-scrolling:touch;
@@ -40,25 +40,26 @@
 
 /* Icon circle */
 .icon-wrapper{
-  width:88px; height:88px; border-radius:999px;
+  width:70px; height:70px; border-radius:999px;
   background:var(--icon-bg, #ffffff);
   display:flex; align-items:center; justify-content:center;
 }
 .icon-wrapper img{
-  width:38px; height:38px; object-fit:contain;
+  width:34px; height:34px; object-fit:contain;
   filter:var(--icon-filter, none);
 }
 
 /* Title */
 .game-carrd p{
   margin-top:12px;
-  font-size:15px; font-weight:700; color:#20242d;
+  font-size:14px; font-weight:500; color:#20242d;
+  padding-bottom: 0px;
 }
 
 /* Bottom accent bar */
 .tile-accent{
   position:absolute; left:50%; transform:translateX(-50%);
-  bottom:10px; width:82px; height:6px; border-radius:8px;
+  bottom:0px; width:60px; height:6px; border-radius:8px;
   background:var(--accent, #ff6b00);
 }
 
@@ -67,7 +68,7 @@
 /* Single Digits */
 .tone-peach{
   --tile-bg:#efd9d2;
-  --icon-bg:#f8e4dc;
+  --icon-bg:#ff6b005e;
   --accent:#ff6b00;
   --icon-filter: brightness(0) saturate(100%) invert(58%) sepia(82%) saturate(4805%) hue-rotate(343deg) brightness(102%) contrast(96%);
 }

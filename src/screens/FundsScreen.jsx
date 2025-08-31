@@ -180,8 +180,11 @@ import { useNavigate } from "react-router-dom";
 import "../css/FundsScreen.css";
 import "../css/mainhome.css";
 import { useState, useEffect } from "react";
-import iconAdd from "../assets/icons/deposit.png";
-import iconWithdraw from "../assets/icons/withdrawal.png";
+import iconAdd from "../assets/icons/plus.png";
+import wallclock from "../assets/icons/wall-clock.png";
+import history from "../assets/icons/his.png";
+import iconWithdraw from "../assets/icons/witfund.png";
+import funhiss from "../assets/icons/funhiss.png";
 import iconBank from "../assets/icons/bank.png";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -273,14 +276,14 @@ export default function FundsScreen() {
       onClick: () => navigate("/funds/add"),
     },
     {
-      icon: iconAdd,
+      icon: wallclock,
       title: "Manual Deposit Requests",
-      tone: "peach2",
+      tone: "peach",
       // map to your existing route for manual deposits/history as needed
       onClick: () => navigate("/funds/depositHistory"),
     },
     {
-      icon: iconAdd,
+      icon: history,
       title: "Withdraw History",
       tone: "lavender",
       onClick: () => navigate("/funds/WithdrawHistory"),
@@ -301,6 +304,12 @@ export default function FundsScreen() {
       icon: iconWithdraw,
       title: "Withdraw Funds",
       tone: "blue",
+      onClick: handleWithdrawClick,
+    },
+    {
+      icon: funhiss,
+      title: "Account Statement",
+      tone: "green",
       onClick: handleWithdrawClick,
     },
   ];
