@@ -12,7 +12,7 @@ display: flex;
   padding: 16px;
   position: sticky;
   top: 0;
-  background: rgb(245, 85, 12);
+  background: #ff2600;
   border-bottom: 1px solid #ddd;
   z-index: 10;
 }
@@ -59,7 +59,7 @@ display: flex;
 }
 
 .bid-card-header {
-  background-color: #f76024;
+  background-color: #ff2600;
   padding: 12px 16px;
   display: flex;
   justify-content: space-between;
@@ -101,7 +101,7 @@ display: flex;
 
 .label {
   font-size: 13px;
-  color: #ffffff;
+  /* color: #ffffff; */
 }
 
 .value {
@@ -134,7 +134,7 @@ display: flex;
   justify-content: space-between;
   padding: 16px;
   position: relative;
-  background: rgb(252, 82, 15);
+  background: #ff2600;
   border-bottom: 1px solid #ddd;
   border-radius:0px 0px 20px 20px;
   font: #fff;
