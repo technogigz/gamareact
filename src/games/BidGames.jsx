@@ -392,7 +392,9 @@ const BidGames = () => {
  const [bracketType, setBracketType] = useState('halfBracket'); // 'halfBracket' is the default
 
     const { user,updateWalletBalance } = useContext(AppContext);
-   const walletBalance = user?.walletBalance || 0;
+ const walletBalanceRaw =
+  user?.walletBalance ?? localStorage.getItem('walletBalance') ?? 0;
+const walletBalance = Number(walletBalanceRaw) || 0; 
   //const { refetchUser } = useContext(AppContext);
   // CORRECTED: State initialization for all UI types
  const [bids, setBids] = useState(() => {
