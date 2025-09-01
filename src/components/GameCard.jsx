@@ -107,6 +107,7 @@ export default function GameCard({ title, number,closed ,isAccountActive, status
       </div>
 
       <div className="card-right">
+        {isAccountActive && (
         <button type="button" className="action-button" onClick={handleClockClick}>
           <div className="icon-container play">
             {/* The icon would be a background image set in CSS */}
@@ -116,6 +117,7 @@ export default function GameCard({ title, number,closed ,isAccountActive, status
           </div>
           <span>Game time</span>
        </button>
+        )}
         
         {/* The Play button is only shown if the account is active */}
         {isAccountActive && (
