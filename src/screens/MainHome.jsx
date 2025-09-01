@@ -13,13 +13,16 @@ import Sidebar from "../components/SideBar";
 import ClosedModal from "../components/ClosedModal";
 import { AppContext } from "../context/AppContext";
 import { toast } from 'react-toastify';
-
+import GameTimeModal from "../components/GameTimeModal";
 
 export default function MainHome() {
   const [games, setGames] = useState([]);
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [closedGame, setClosedGame] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [showGameTime, setShowGameTime] = useState(false);
+const [selectedGame, setSelectedGame] = useState(null);
+
   const navigate = useNavigate();
    const { user } = useContext(AppContext);
 
@@ -56,6 +59,7 @@ export default function MainHome() {
 
       if (response.data.status) {
         setGames(response.data.info);
+        console.log(games);
       } else {
         console.warn("Game list fetch failed:", response.data.msg);
       }
@@ -153,6 +157,17 @@ const handleGameClick = (game) => {
                 closed={!g.playStatus}
                 isAccountActive={user?.accountStatus === true}
                 statusText={g.statusText}
+
+                  onTimeClick={() => {
+      setSelectedGame({
+        gameName: g.gameName,
+        openTime: g.openTime,
+        closeTime: g.closeTime,
+        playStatus:g.playStatus
+      });
+      setShowGameTime(true);
+    }}
+
               />
             </div>
           ))}
@@ -176,6 +191,11 @@ const handleGameClick = (game) => {
           <ClosedModal game={closedGame} onClose={() => setClosedGame(null)} />
         </div>
       )}
+
+
+      {showGameTime && (
+  <GameTimeModal game={selectedGame} onClose={() => setShowGameTime(false)} />
+)}
     </div>
   );
 }

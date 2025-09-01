@@ -1,93 +1,3 @@
-// import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import "./SideBar.css";
-// import closeIcon from "../assets/icons/close.png";
-// import userIcon from "../assets/icons/man1.svg";
-// import { useContext } from "react";
-// import { AppContext } from "../context/AppContext";
-
-
-// export default function Sidebar({ isOpen, onClose }) {
-//    const { user, loading } = useContext(AppContext);
-//   const navigate = useNavigate();
-//   const [visible, setVisible] = useState(false);
-
-//   // Delay adding "open" class to trigger CSS transition properly
-//   useEffect(() => {
-//     if (isOpen) {
-//       setTimeout(() => setVisible(true), 10);
-//     } else {
-//       setVisible(false);
-//     }
-//   }, [isOpen]);
-
-  // const items = [
-  //   { icon: "home",    label: "Home",               path: "/home"           },
-  //   { icon: "hammer",  label: "My Bids",            path: "/bids"           },
-  //   { icon: "lock",    label: "MPIN",               path: "/set-new-pin"    },
-  //   { icon: "doc",     label: "Passbook",           path: "/passbook"       },
-  //   { icon: "chat",    label: "Chats",              path: "/support"        },
-  //   { icon: "bank",    label: "Funds",              path: "/funds"          },
-  //   { icon: "bell",    label: "Notifications",      path: "/notifications"  },
-  //   { icon: "video",   label: "Videos",             path: "/videos"         },
-  //   { icon: "rules",   label: "Notice Board/Rules", path: "/rules"          },
-  //   { icon: "rates",   label: "Game Rates",         path: "/rates"          },
-  //   { icon: "chart",   label: "Charts",             path: "/charts"         },
-  //   { icon: "idea",    label: "Submit Idea",        path: "/submit-idea"    },
-  //   { icon: "settings",label: "Settings",           path: "/settings"       },
-  //   { icon: "share",   label: "Share Application",  path: "/share"          },
-  //   { icon: "logout",  label: "LOGOUT",             path: "/logout"         },
-  // ];
-
-//   return (
-//     <div className="sidebar-container">
-//       {/* Overlay */}
-//       <div
-//         className={`sidebar-overlay ${isOpen ? "open" : ""}`}
-//         onClick={onClose}
-//       />
-
-//       {/* Slide Panel */}
-//       <aside className={`sidebar ${visible ? "open" : ""}`}>
-//         <header className="sidebar-header">
-//           <div className="user-info">
-//             <img src={user?.profilePicture || userIcon} alt="User" className="user-icon" />
-//             <div className="user-details">
-//               <div className="username">{loading ? 'Loading...' : (user?.fullName || 'Guest')}</div>
-//                <div className="phone">{loading ? '...' : (user?.mobileNo || '')}</div>
-//                </div>
-//           </div>
-//           <button className="close-btn" onClick={onClose}>
-//             <img src={closeIcon} alt="×" />
-//           </button>
-//         </header>
-
-//         {/* Menu */}
-//         <ul className="sidebar-menu">
-//           {items.map(({ icon, label, path }) => (
-//             <li
-//               key={label}
-//               onClick={() => {
-//                 if (label === "LOGOUT") {
-//           // 🔐 MOCK LOGOUT
-//           localStorage.clear(); // clear tokens or user data
-//           alert("You have been logged out."); // optional alert
-//           navigate("/enter-mobile", { replace: true }); // redirect to login screen
-//         } else {
-//           if (path) navigate(path);
-//         }
-//                 onClose();
-//               }}
-//             >
-//               <span className={`sidebar-icon icon-${icon}`} />
-//               <span className="label">{label}</span>
-//             </li>
-//           ))}
-//         </ul>
-//       </aside>
-//     </div>
-//   );
-// }
 
 
 
@@ -118,26 +28,26 @@ export default function Sidebar({ isOpen, onClose }) {
 
 
   const allItems = [
-    { icon: "home",     label: "Home",               path: "/home" },
-    { icon: "hammer",   label: "My Bids",            path: "/bids" },
-    { icon: "lock",     label: "MPIN",               path: "/set-new-pin" },
-    { icon: "doc",      label: "Passbook",           path: "/passbook" },
-    { icon: "chat",     label: "Chats",              href: `https://wa.me/${919306360393}` },
-    { icon: "bank",     label: "Funds",              path: "/funds" },
-    { icon: "bell",     label: "Notifications",      path: "/notifications" },
-    { icon: "video",    label: "Videos",             path: "/videos" },
-    { icon: "rules",    label: "Notice Board/Rules", path: "/rules" },
-    { icon: "rates",    label: "Game Rates",         path: "/rates" },
-    { icon: "chart",    label: "Charts",             path: "/charts" },
-    { icon: "idea",     label: "Submit Idea",        path: "/submit-idea" },
-    { icon: "settings", label: "Settings",           path: "/settings" },
-    { icon: "share",    label: "Share Application",  path: "/share" },
-    { icon: "logout",   label: "LOGOUT",             path: "/logout" },
+    { icon: "home",     llabel: "Home",               path: "/home" },
+    { icon: "hammer",   llabel: "My Bids",            path: "/bids" },
+    { icon: "lock",     llabel: "MPIN",               path: "/set-new-pin" },
+    { icon: "doc",      llabel: "Passbook",           path: "/passbook" },
+    { icon: "chat",     llabel: "Chats",              href: `https://wa.me/${919306360393}` },
+    { icon: "bank",     llabel: "Funds",              path: "/funds" },
+    { icon: "bell",     llabel: "Notifications",      path: "/notifications" },
+    { icon: "video",    llabel: "Videos",             path: "/videos" },
+    { icon: "rules",    llabel: "Notice Board/Rules", path: "/rules" },
+    { icon: "rates",    llabel: "Game Rates",         path: "/rates" },
+    { icon: "chart",    llabel: "Charts",             path: "/charts" },
+    { icon: "idea",     llabel: "Submit Idea",        path: "/submit-idea" },
+    { icon: "settings", llabel: "Settings",           path: "/settings" },
+    { icon: "share",    llabel: "Share Application",  path: "/share" },
+    { icon: "logout",   llabel: "LOGOUT",             path: "/logout" },
   ];
 
   const visibleItems = user?.accountStatus === true 
     ? allItems
-    : allItems.filter(item => item.label === "LOGOUT");
+    : allItems.filter(item => item.llabel === "LOGOUT");
 
   // In SideBar.jsx
 
@@ -182,11 +92,11 @@ const handleLogout = () => {
           </header>
 
           <ul className="sidebar-menu">
-            {visibleItems.map(({ icon, label, path ,href}) => (
+            {visibleItems.map(({ icon, llabel, path ,href}) => (
               <li
-                key={label}
+                key={llabel}
                 onClick={() => {
-                  if (label === "LOGOUT") {
+                  if (llabel === "LOGOUT") {
                     handleLogout();
                   } else if (path) {
                     navigate(path);
@@ -198,7 +108,7 @@ const handleLogout = () => {
                 }}
               >
                 <span className={`sidebar-icon icon-${icon}`} />
-                <span className="label">{label}</span>
+                <span className="llabel">{llabel}</span>
               </li>
             ))}
           </ul>

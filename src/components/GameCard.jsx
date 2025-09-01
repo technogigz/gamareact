@@ -87,11 +87,14 @@ import playIcon from "../assets/icons/play.png";
 // import clockIcon from '../assets/icons/clock.svg';
 // import playIcon from '../assets/icons/play.svg';
 
-export default function GameCard({ title, number,closed ,isAccountActive, statusText }) {
+export default function GameCard({ title, number,closed ,isAccountActive, statusText,  onTimeClick  }) {
   // In the new design, the status text like "Betting is Running for Today"
   // seems to be the main indicator, so we use that directly.
   
-
+   const handleClockClick = (e) => {
+    e.stopPropagation();           // ⬅️ prevent parent card click
+    onTimeClick && onTimeClick();  // ⬅️ open the time modal
+  };
   return (
     <div>
    <div className={`game-card ${!isAccountActive ? 'disabled' : ''}`}>
@@ -104,7 +107,7 @@ export default function GameCard({ title, number,closed ,isAccountActive, status
       </div>
 
       <div className="card-right">
-        <div className="action-button">
+        <button type="button" className="action-button" onClick={handleClockClick}>
           <div className="icon-container play">
             {/* The icon would be a background image set in CSS */}
             <div className="icon clock-icon">
@@ -112,7 +115,7 @@ export default function GameCard({ title, number,closed ,isAccountActive, status
             </div>
           </div>
           <span>Game time</span>
-        </div>
+       </button>
         
         {/* The Play button is only shown if the account is active */}
         {isAccountActive && (
