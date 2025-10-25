@@ -280,7 +280,7 @@ export default function KingJackpotScreen() {
                   <span className="time">{g.time}</span>
                 </div>
 
-                <div className="result">-</div>
+                <div className="result">{g.result}</div>
 
                 <div className={`status ${g.closed ? "red" : "green"}`}>
                   {g.statusText}
