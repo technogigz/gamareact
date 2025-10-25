@@ -412,7 +412,7 @@ const KingStarlineDashboard = () => {
                   </div>
                 </div>
 
-                <div className="ksd-mid">-</div>
+                <div className="ksd-mid">{g.result}</div>
 
                 <div className="ksd-right">
                   <button
